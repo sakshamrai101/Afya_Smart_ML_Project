@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.card h2 {
+    color: #f4a34c;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.checklist {
+    list-style: none;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.checklist li {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.checklist li:last-child {
+    border-bottom: none;
+}
+
+.checklist input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.edit-field {
+    width: 95%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    resize: vertical;
+    background-color: #f8f8f8;
+}
+
+.done-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #f4a34c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.done-button:hover {
+    background-color: #f4a34c;
+}
