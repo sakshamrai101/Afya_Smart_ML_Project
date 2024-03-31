@@ -29,7 +29,7 @@ body, html {
 /* Heading styles */
 h2 {
     margin-bottom: 30px; /* Add space below heading */
-    color: #007bff; /* Blue color for heading */
+    color: #f4a34c; /* Blue color for heading */
 }
 
 /* Input field styles */
@@ -57,7 +57,7 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-color: #007bff; /* Blue border color on focus */
+    border-color: #f4a34c; /* Blue border color on focus */
     outline: none; /* Remove default focus outline */
 }
 
@@ -67,7 +67,7 @@ input[type="submit"] {
     padding: 15px 0;
     font-size: 18px;
     border: none;
-    background-color: #007bff;
+    background-color: #f4a34c;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -75,5 +75,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #f4a34c;
 }
