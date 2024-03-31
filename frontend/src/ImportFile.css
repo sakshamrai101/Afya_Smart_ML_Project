@@ -1,0 +1,13 @@
+.import-container {
+    width: 50%; /* Set the desired width */
+    margin: 0 auto; /* Center the container horizontally */
+    border: 3px dotted #656165;
+    border-radius: 20px;
+    padding: 50px;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    height: 300px; /* Set the desired height */
+    margin-top: 30vh;
+  }
+  
