@@ -19,7 +19,6 @@
             background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://source.unsplash.com/1280x960/?care');
         }
 
-
         .container {
             display: flex;
             flex-direction: column;
@@ -65,17 +64,16 @@
             height: 220px;
         }
 
-        .card-bottom{
-          padding: 20px;
-          border: 1px solid black;
-          border-radius: 8px;
-          height: 220px;
+        .card-bottom {
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 8px;
+            height: 220px;
         }
 
         h5 {
             text-align: center;
         }
-
 
         .custom-file-label::after {
             content: 'Choose file';
@@ -104,15 +102,14 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+            0% {
+                transform: rotate(0deg);
+            }
 
-        
-        .custom-file-label::after {
-            content: 'Choose file';
+            100% {
+                transform: rotate(360deg);
+            }
         }
-
     </style>
 </head>
 
@@ -138,17 +135,17 @@
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="inputGroupFile04" accept=".pdf,.txt,.docx" onchange="updateFileNameLabel()">
-                                <label class="custom-file-label" for="inputGroupFile04" >Choose file</label>
+                                <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
                             </div>
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary custom-button" type="button" id='uploadButton' onclick="showLoading()" disabled>Upload</button>
+                                <button class="btn btn-outline-secondary custom-button" type="button" id="uploadButton" onclick="showLoading()" disabled>Upload</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <div class="loading-overlay" id="loadingOverlay">
@@ -158,8 +155,26 @@
         function showLoading() {
             document.getElementById('loadingOverlay').style.display = 'flex';
             setTimeout(() => {
-                window.location.href = 'your-next-page.html'; // Redirect to the next page after 2 seconds
+                addPneumoniaButton();
+                document.getElementById('loadingOverlay').style.display = 'none';
             }, 1000);
+        }
+
+        function addPneumoniaButton() {
+            // Add the "Pneumonia" button
+            var newButton = document.createElement("button");
+            newButton.className = "btn btn-outline-secondary custom-button";
+            newButton.textContent = "Pneumonia";
+            newButton.style.width = "192px";
+            newButton.style.marginRight = "15px";
+            
+
+            var cardTop = document.querySelector('.card-top');
+            var newRow = document.createElement("div");
+            newRow.className = "row mt-3"; // Add margin top
+            newRow.appendChild(document.createElement("div")).className = "col";
+            newRow.appendChild(newButton);
+            cardTop.appendChild(newRow);
         }
 
         function updateFileNameLabel() {
@@ -173,7 +188,7 @@
         }
     </script>
 
-    
+
 </body>
 
 </html>
