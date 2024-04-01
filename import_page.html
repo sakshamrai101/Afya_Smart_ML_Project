@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://source.unsplash.com/1280x960/?care');
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        .custom-button {
+            background-color: #f4a34c;
+            border-color: #f4a34c;
+            color: white;
+            width: 100%;
+        }
+
+        .custom-button:hover {
+            background-color: rgba(244, 163, 76, 0.8);
+            border-color: rgba(244, 163, 76, 0.8);
+        }
+
+        .card {
+            background-color: #fff;
+            border: 2px dashed black;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            height: 500px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-top {
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 8px;
+            height: 220px;
+        }
+
+        .card-bottom{
+          padding: 20px;
+          border: 1px solid black;
+          border-radius: 8px;
+          height: 220px;
+        }
+
+        h5 {
+            text-align: center;
+        }
+
+        .home-button {
+            position: absolute;
+            bottom: 140px;
+            right: 320px;
+            background-color: #f4a34c;
+            border-color: #f4a34c;
+            color: white;
+        }
+
+        .home-button:hover {
+          background-color: rgba(244, 163, 76, 0.8);
+          border-color: rgba(244, 163, 76, 0.8);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-top">
+                <h5>Reference E-consult Data</h5>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-outline-secondary custom-button">Bone Fracture</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-secondary custom-button">Oral Surgery</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <h5>Import E-consult Data</h5>
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary custom-button" type="button">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-secondary home-button">Home</button>
+        
+    </div>
+</body>
+
+</html>
