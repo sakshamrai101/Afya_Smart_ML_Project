@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialist Recommendations</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/recommendations.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Validated Recommendations</h2>
+        <div class="recommendations">
+            <p>Recommendation 1: <span>Implement a new treatment protocol for...</span></p>
+            <p>Recommendation 2: <span>Review patient history before prescribing...</span></p>
+        </div>
+        <h3>Were these recommendations helpful?</h3>
+        <form class="feedback-form">
+            <select name="helpfulness" class="helpfulness">
+                <option value="not-helpful">Not helpful at all</option>
+                <option value="slightly-helpful">Slightly helpful</option>
+                <option value="moderately-helpful">Moderately helpful</option>
+                <option value="very-helpful">Very helpful</option>
+                <option value="extremely-helpful">Extremely helpful</option>
+            </select>
+            <textarea class="feedback" placeholder="Additional feedback..."></textarea>
+            <!--<button type="submit" class="done-button">Done</button>-->
+            <button id="doneButton" class="done-button">Done</button>
+        </form>
+    </div>
+
+    <!-- Define doneURL variable using script tag -->
+    <!-- Define doneURL variable using script tag -->
+    <script>
+        var doneURL = '/operations2';
+    </script>
+
+    <!-- Include the done.js script -->
+    <script src="{{ url_for('static', filename='js/done.js') }}"></script>
+
+</body>
+
+</html>

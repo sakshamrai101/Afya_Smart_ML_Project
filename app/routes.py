@@ -57,6 +57,14 @@ def logout():
 def operations():
     return render_template('operations.html')
 
+@app.route('/Targeted_questions', methods=['POST'])
+def targeted_questions():
+    return render_template('targeted_questions.html')
+
 @app.route('/operations2')
 def operations2():
     return render_template('operations2.html')
+
+@app.route('/Recommendations', methods=['POST'])
+def recommendations():
+    return render_template('recommendations.html')

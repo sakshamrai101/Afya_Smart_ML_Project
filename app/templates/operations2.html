@@ -1,19 +1,57 @@
-{% extends "operations.html" %}
+{% extends "base.html" %}
+{% block title %}Operations2{% endblock %}
 
 {% block content %}
-    {{ super() }} {# Include the content from operations.html #}
+    <!-- Your HTML content for the operations page goes here -->
+    <form id="operations2Form" action="/Recommendations" method="post">
+    <div class="background">
+        <div class="container">
+            <h2>Operations Page</h2>
+            <button id="button1" disabled>Display missing information</button>
+            <button id="button2" disabled>Display targeted questions</button>
+            <button id="button3">Display recommendations</button>
+            <button id="goToDashboardButton">Go to Dashboard</button>
+        </div>
+    </div>
 
-    <!-- Additional content for the extended page -->
-    <script>
-        // Disable button 2
-        document.getElementById('button2').disabled = true;
-    </script>
+    
 
-    <!-- Custom styles for the disabled button -->
+    <!-- Custom styles for the buttons -->
     <style>
-        #button2:disabled {
-            background-color: lightgrey; /* Change background color for disabled button */
-            color: darkgrey; /* Change text color for disabled button */
+        #button1, #button2, #button3, #goToDashboardButton {
+            display: block;
+            margin: 20px auto; /* Add margin to separate buttons */
+            font-size: 24px;
+            padding: 15px 30px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .background {
+            background-image: url('https://source.unsplash.com/800x600/?care');
+            background-size: cover; /* Cover the entire container */
+            background-position: center; /* Center the background image */
+            height: 100vh; /* Set the background container height to the viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #button1:disabled, #button2:disabled {
+            background-color: lightgrey; /* Change background color for disabled buttons */
+            color: darkgrey; /* Change text color for disabled buttons */
         }
     </style>
+    <script>
+        // Define the variable for button2
+        const FormID = 'operations2Form';
+
+    // Define the variable for the button ID
+        const ButtonID = 'button3';
+    </script>
+
+    <!-- Include the done.js script -->
+    <script src="{{ url_for('static', filename='js/click_operation.js') }}"></script>
+    
 {% endblock %}
