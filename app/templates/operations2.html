@@ -1,0 +1,19 @@
+{% extends "operations.html" %}
+
+{% block content %}
+    {{ super() }} {# Include the content from operations.html #}
+
+    <!-- Additional content for the extended page -->
+    <script>
+        // Disable button 2
+        document.getElementById('button2').disabled = true;
+    </script>
+
+    <!-- Custom styles for the disabled button -->
+    <style>
+        #button2:disabled {
+            background-color: lightgrey; /* Change background color for disabled button */
+            color: darkgrey; /* Change text color for disabled button */
+        }
+    </style>
+{% endblock %}

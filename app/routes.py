@@ -52,3 +52,11 @@ def dashboard():
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
+
+@app.route('/operations')
+def operations():
+    return render_template('operations.html')
+
+@app.route('/operations2')
+def operations2():
+    return render_template('operations2.html')
