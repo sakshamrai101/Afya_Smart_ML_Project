@@ -34,18 +34,26 @@ def login():
     print('user:', user)
     if user:
         session['username'] = username
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('import_page'))
     else:
         flash('Invalid username or password', 'error')
         return redirect(url_for('index'))
 
 # Route to handle dashboard
-@app.route('/dashboard')
-def dashboard():
+@app.route('/home')
+def import_page():
     if 'username' in session:
-        return render_template('dashboard.html', username=session['username'])
+        return render_template('import_page.html', username=session['username'])
     else:
         return redirect(url_for('index'))
+    
+@app.route('/operation3', methods=['GET','POST'])
+def operation3():
+    return render_template('operation3.html')
+
+@app.route('/operation2', methods=['GET','POST'])
+def operation2():
+    return render_template('operation2.html')
 
 # Route to handle logout
 @app.route('/logout')
@@ -53,18 +61,22 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
 
-@app.route('/operations')
-def operations():
-    return render_template('operations.html')
+@app.route('/operation1', methods=['GET','POST'])
+def operation1():
+    return render_template('operation1.html')
+
+@app.route('/Missing_info', methods=['POST'])
+def missing_info():
+    return render_template('missing_info.html')
 
 @app.route('/Targeted_questions', methods=['POST'])
 def targeted_questions():
     return render_template('targeted_questions.html')
 
-@app.route('/operation3')
-def operation3():
-    return render_template('operation3.html')
-
 @app.route('/Recommendations', methods=['POST'])
 def recommendations():
     return render_template('recommendations.html')
+
+@app.route('/operation4')
+def operation4():
+    return render_template('operation4.html')

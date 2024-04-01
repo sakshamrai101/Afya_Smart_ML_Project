@@ -123,12 +123,20 @@
                 <h5>Welcome, {{ username }}</h5>
                 <h5>Reference E-consult Data</h5>
                 <div class="row">
-                    <div class="col">
-                        <button class="btn btn-outline-secondary custom-button">Bone Fracture</button>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-outline-secondary custom-button">Oral Surgery</button>
-                    </div>
+                    <form id="boneFractureForm" action="/operation3" method="post">
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-outline-secondary custom-button" type="submit">Bone Fracture</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="oralSurgeryForm" action="/operation2" method="post">
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-outline-secondary custom-button" type="submit">Oral Surgery</button>
+                            </div>
+                        </div>
+                    </form>                    
                 </div>
             </div>
             <div class="card-bottom">
@@ -151,29 +159,8 @@
         
     </div>
 
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
-    <script>
-        function showLoading() {
-            document.getElementById('loadingOverlay').style.display = 'flex';
-            setTimeout(() => {
-                window.location.href = 'your-next-page.html'; // Redirect to the next page after 2 seconds
-            }, 1000);
-        }
+    <script src="{{ url_for('static', filename='js/click_data.js') }}"></script>
 
-        function updateFileNameLabel() {
-            var input = document.getElementById('inputGroupFile04');
-            var fileName = input.files[0].name;
-            var label = document.querySelector('.custom-file-label');
-            label.textContent = fileName;
-
-            // Enable the upload button
-            document.getElementById('uploadButton').disabled = false;
-        }
-    </script>
-
-    
 </body>
 
 </html>

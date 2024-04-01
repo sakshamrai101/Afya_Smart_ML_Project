@@ -13,7 +13,7 @@ document.getElementById(Form_New).addEventListener('submit', function(event) {
             break;
         case 'goToDashboardButton':
             // If the "Go to Dashboard" button was clicked, redirect to the dashboard page
-            window.location.href = '/dashboard'; // Replace '/dashboard' with the actual URL of your dashboard page
+            window.location.href = '/home'; // Replace '/dashboard' with the actual URL of your dashboard page
             event.preventDefault(); // Prevent default form submission
             break; // Prevent further execution of the function
         default:
