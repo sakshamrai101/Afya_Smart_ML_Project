@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    background-color: #f0f0f0;
 }
 
 .card {
@@ -19,23 +19,34 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.question-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.question {
+.recommendations p {
     margin-bottom: 10px;
 }
 
-.priority {
-    font-weight: bold;
+.card h2 {
     color: #f4a34c;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    color: #f4a34c;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.helpfulness {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8;
 }
 
 .feedback {
-    width: 95%;
-    margin: 20px 0;
+    width: 90%;
+    margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -48,7 +59,8 @@ body {
     border: none;
     padding: 10px 20px;
     text-align: center;
-    display: inline-block;
+    display: block;
+    margin: auto;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
@@ -56,9 +68,4 @@ body {
 
 .done-button:hover {
     background-color: #f4a34c;
-}
-.card h2 {
-    color: #f4a34c;
-    font-size: 24px;
-    margin-bottom: 16px;
 }
