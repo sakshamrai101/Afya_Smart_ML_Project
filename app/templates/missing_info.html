@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missing Information Checklist</title>
-    <link rel="stylesheet" href="missing_info.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/missing_info.css') }}">
 </head>
 
 <body>
@@ -20,6 +20,12 @@
         <textarea class="edit-field" placeholder="Add notes or additional missing items..."></textarea>
         <button class="done-button">Done</button>
     </div>
+
+
+    <script>
+        var doneURL = '/operations';
+    </script>
+    <script src="{{ url_for('static', filename='js/done.js') }}"></script>
 
 </body>
 

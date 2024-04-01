@@ -61,9 +61,9 @@ def operations():
 def targeted_questions():
     return render_template('targeted_questions.html')
 
-@app.route('/operations2')
-def operations2():
-    return render_template('operations2.html')
+@app.route('/operation3')
+def operation3():
+    return render_template('operation3.html')
 
 @app.route('/Recommendations', methods=['POST'])
 def recommendations():

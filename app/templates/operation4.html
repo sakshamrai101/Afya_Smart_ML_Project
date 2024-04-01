@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Operation4{% endblock %}
+
+{% block content %}
+    <!-- Your HTML content for the operations page goes here -->
+    <form id="operation4Form" action="/MissingInfo" method="post">
+    <div class="background">
+        <div class="container">
+            <h2>Operations Page</h2>
+            <button id="button1" disabled>Display missing information</button>
+            <button id="button2">Display targeted questions</button>
+            <button id="button3">Display recommendations</button>
+            <button id="goToDashboardButton">Go to Dashboard</button>
+        </div>
+    </div>
+
+<!-- Custom styles for the buttons -->
+<style>
+    #button1, #button2, #button3 {
+        display: block;
+        margin: 20px auto; /* Add margin to separate buttons */
+        font-size: 24px;
+        padding: 15px 30px;
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #button1:disabled {
+        background-color: lightgrey; /* Change background color for disabled button */
+        color: darkgrey; /* Change text color for disabled button */
+    }
+
+    #button2:disabled {
+        background-color: lightgrey; /* Change background color for disabled button */
+        color: darkgrey; /* Change text color for disabled button */
+    }
+
+    #button3:disabled {
+        background-color: lightgrey; /* Change background color for disabled button */
+        color: darkgrey; /* Change text color for disabled button */
+    }
+    
+</style>
