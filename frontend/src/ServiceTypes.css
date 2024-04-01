@@ -9,3 +9,22 @@
     text-align: center;
     margin-top: 50px; /* Adjust the margin as needed */
   }
+
+  .btn.btn-primary.btn-lg {
+    background-color: #f4a34c;
+    color: white;
+    border: none;
+  }
+  
+  .btn.btn-primary.btn-lg:hover {
+    background-color: rgba(244, 163, 76, 0.8);
+  }
+
+  .service-container.card{
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed #5b5959;
+    border-radius: 10px;
+    width: 750px;
+    height: 400px;
+  }

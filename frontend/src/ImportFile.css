@@ -1,13 +1,49 @@
-.import-container {
-    width: 50%; /* Set the desired width */
-    margin: 0 auto; /* Center the container horizontally */
-    border: 3px dotted #656165;
-    border-radius: 20px;
-    padding: 50px;
-    flex-direction: column;
-    justify-content: center;
-    display: flex;
-    height: 300px; /* Set the desired height */
-    margin-top: 30vh;
-  }
-  
+/* ImportFile.css */
+.reference-container{
+  text-align: center;
+}
+
+.import-container.card {
+  text-align: center;
+  padding: 20px;
+  border: 2px dashed #5b5959;
+  border-radius: 10px;
+  width: 750px;
+  height: 400px;
+}
+
+.import-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+
+.oral-surgery.btn.btn-secondary.btn-lg,
+.bone-fracture.btn.btn-primary.btn-lg{
+  background-color: #f4a34c;
+  border: none;
+ 
+}
+
+.oral-surgery.btn.btn-secondary.btn-lg:hover,
+.bone-fracture.btn.btn-primary.btn-lg:hover {
+  background-color: rgba(244, 163, 76, 0.8);
+}
+
+
+
+.import-button.btn.btn-primary {
+  background-color: #f4a34c;
+  color: white;
+  border: none;
+  height: 48px;
+  margin-right: 100%;
+}
+
+.import-button.btn.btn-primary:hover {
+  background-color: #f4a34c;
+}
+
+
+

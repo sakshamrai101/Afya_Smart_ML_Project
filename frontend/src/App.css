@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://source.unsplash.com/1280x960/?care');
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background image */
+}
