@@ -90,6 +90,42 @@
           border-color: rgba(244, 163, 76, 0.8);
         }
 
+        .custom-file-label::after {
+            content: 'Choose file';
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .loading-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        
+        .custom-file-label::after {
+            content: 'Choose file';
+        }
+
     </style>
 </head>
 
@@ -113,11 +149,11 @@
                     <div class="col">
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile04">
-                                <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                                <input type="file" class="custom-file-input" id="inputGroupFile04" accept=".pdf,.txt,.docx" onchange="updateFileNameLabel()">
+                                <label class="custom-file-label" for="inputGroupFile04" >Choose file</label>
                             </div>
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary custom-button" type="button">Upload</button>
+                                <button class="btn btn-outline-secondary custom-button" type="button" id='uploadButton' onclick="showLoading()" disabled>Upload</button>
                             </div>
                         </div>
                     </div>
@@ -127,6 +163,30 @@
         <button type="button" class="btn btn-outline-secondary home-button">Home</button>
         
     </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <script>
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+            setTimeout(() => {
+                window.location.href = 'your-next-page.html'; // Redirect to the next page after 2 seconds
+            }, 1000);
+        }
+
+        function updateFileNameLabel() {
+            var input = document.getElementById('inputGroupFile04');
+            var fileName = input.files[0].name;
+            var label = document.querySelector('.custom-file-label');
+            label.textContent = fileName;
+
+            // Enable the upload button
+            document.getElementById('uploadButton').disabled = false;
+        }
+    </script>
+
+    
 </body>
 
 </html>
