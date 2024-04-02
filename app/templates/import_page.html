@@ -121,18 +121,14 @@
                 <h5>Reference E-consult Data</h5>
                 <div class="row">
                     <form id="boneFractureForm" action="/operation3" method="post">
-                        <div class="row">
                             <div class="col">
                                 <button class="btn btn-outline-secondary custom-button" type="submit">Bone Fracture</button>
                             </div>
-                        </div>
                     </form>
                     <form id="oralSurgeryForm" action="/operation2" method="post">
-                        <div class="row">
                             <div class="col">
                                 <button class="btn btn-outline-secondary custom-button" type="submit">Oral Surgery</button>
                             </div>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -181,27 +177,28 @@
             newForm.id = "pneumoniaForm";
             newForm.action = "/operation1"; // Set the form action to the appropriate URL
             newForm.method = "post";
-            
+
+            // Add a new row for the "Pneumonia" button
+            var newRow = document.createElement("div");
+            newRow.className = "row mt-3"; // Add margin top
+            newRow.appendChild(document.createElement("div")).className = "col";
+            newForm.appendChild(newRow);
 
             // Add the "Pneumonia" button
             var newButton = document.createElement("button");
             newButton.className = "btn btn-outline-secondary custom-button";
             newButton.type = "submit";
             newButton.textContent = "Pneumonia";
-            newButton.style.width = "192px";
-            newButton.style.marginRight = "15px";
-            
+            newButton.style.width = "120px";
+
+            newRow.querySelector(".col").appendChild(newButton);
 
             var cardTop = document.querySelector('.card-top');
-            var newRow = document.createElement("div");
-            newRow.className = "row mt-3"; // Add margin top
-            newRow.appendChild(document.createElement("div")).className = "col";
-            newForm.appendChild(newButton);
-            newRow.appendChild(newForm);
-            cardTop.appendChild(newRow);
+            cardTop.appendChild(newForm);
 
             localStorage.setItem('buttonAdded', 'true');
         }
+
 
         
 
