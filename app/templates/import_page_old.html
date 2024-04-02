@@ -19,6 +19,7 @@
             background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://source.unsplash.com/1280x960/?care');
         }
 
+
         .container {
             display: flex;
             flex-direction: column;
@@ -64,16 +65,17 @@
             height: 220px;
         }
 
-        .card-bottom {
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 8px;
-            height: 220px;
+        .card-bottom{
+          padding: 20px;
+          border: 1px solid black;
+          border-radius: 8px;
+          height: 220px;
         }
 
         h5 {
             text-align: center;
         }
+
 
         .custom-file-label::after {
             content: 'Choose file';
@@ -102,14 +104,15 @@
         }
 
         @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
+
+        
+        .custom-file-label::after {
+            content: 'Choose file';
+        }
+
     </style>
 </head>
 
@@ -133,29 +136,29 @@
                                 <button class="btn btn-outline-secondary custom-button" type="submit">Oral Surgery</button>
                             </div>
                         </div>
-                    </form>
+                    </form>                    
                 </div>
             </div>
             <div class="card-bottom">
-                <h5>Import E-consult Data</h5>
-                <div class="row">
-                    <div class="col">
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputGroupFile04" accept=".pdf,.txt,.docx" onchange="updateFileNameLabel()">
-                                <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary custom-button" type="button" id="uploadButton" onclick="showLoading()" disabled>Upload</button>
-                            </div>
-                        </div>
-                    </div>
+    <h5>Import E-consult Data</h5>
+    <div class="row">
+        <div class="col">
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile04" accept=".pdf,.txt,.docx" onchange="updateFileNameLabel()">
+                    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary custom-button" type="button" id='uploadButton' onclick="showLoading()" disabled>Upload</button>
                 </div>
             </div>
         </div>
-
     </div>
+</div>
 
+        </div>
+        
+    </div>
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
     </div>
@@ -163,47 +166,9 @@
         function showLoading() {
             document.getElementById('loadingOverlay').style.display = 'flex';
             setTimeout(() => {
-                // Check if the button has already been added
-                var buttonAdded = localStorage.getItem('buttonAdded');
-                if (!buttonAdded) {
-                    // If the button has not been added, add it
-                    addPneumoniaButton();
-                    // Set the flag in session storage indicating that the button has been added
-                    localStorage.setItem('buttonAdded', 'true');
-                }
-                document.getElementById('loadingOverlay').style.display = 'none';
+                window.location.href = 'missing_info.html'; // Redirect to the next page after 2 seconds
             }, 1000);
         }
-
-        function addPneumoniaButton() {
-            // Create a form element with the desired id
-            var newForm = document.createElement("form");
-            newForm.id = "pneumoniaForm";
-            newForm.action = "/operation1"; // Set the form action to the appropriate URL
-            newForm.method = "post";
-            
-
-            // Add the "Pneumonia" button
-            var newButton = document.createElement("button");
-            newButton.className = "btn btn-outline-secondary custom-button";
-            newButton.type = "submit";
-            newButton.textContent = "Pneumonia";
-            newButton.style.width = "192px";
-            newButton.style.marginRight = "15px";
-            
-
-            var cardTop = document.querySelector('.card-top');
-            var newRow = document.createElement("div");
-            newRow.className = "row mt-3"; // Add margin top
-            newRow.appendChild(document.createElement("div")).className = "col";
-            newForm.appendChild(newButton);
-            newRow.appendChild(newForm);
-            cardTop.appendChild(newRow);
-
-            localStorage.setItem('buttonAdded', 'true');
-        }
-
-        
 
         function updateFileNameLabel() {
             var input = document.getElementById('inputGroupFile04');
