@@ -3,6 +3,7 @@ import sqlite3
 from app import app
 import os
 import sys
+from .userstory1 import conversation_loop
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the file path to data.csv
 db_file_path = os.path.join(current_dir, 'data', 'database.db')
@@ -67,7 +68,8 @@ def operation1():
 
 @app.route('/Missing_info', methods=['POST'])
 def missing_info():
-    return render_template('missing_info.html')
+    missing_info_list = conversation_loop()
+    return render_template('missing_info.html', missing_info_list=missing_info_list)
 
 @app.route('/Targeted_questions', methods=['POST'])
 def targeted_questions():

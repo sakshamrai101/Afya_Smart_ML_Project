@@ -13,9 +13,9 @@
     <div class="card">
         <h2>Missing Information Checklist</h2>
         <ul class="checklist">
-            <li><input type="checkbox" id="item1"><label for="item1">Item - 1</label></li>
-            <li><input type="checkbox" id="item2"><label for="item2">Item - 2</label></li>
-            <li><input type="checkbox" id="item3"><label for="item3">Item - 3</label></li>
+            {% for item in missing_info_list %}
+                <li><input type="checkbox" id="item{{ item.number }}"><label for="item{{ item.number }}">{{ item.info }}</label></li>
+            {% endfor %}
         </ul>
         <textarea class="edit-field" placeholder="Add notes or additional missing items..."></textarea>
         <button id="doneButton" class="done-button">Done</button> 
