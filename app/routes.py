@@ -16,7 +16,7 @@ from config import Config
 
 app.secret_key = Config.SECRET_KEY
 print("secret key:",app.secret_key)
-
+app.open_ai_key = Config.OPENAI_API_KEY
 # Route to handle user login
 @app.route('/', methods=["GET"])
 def index():
@@ -75,10 +75,6 @@ def missing_info():
 @app.route('/Targeted_questions', methods=['POST'])
 def targeted_questions():
     return render_template('targeted_questions.html')
-
-@app.route('/Recommendations', methods=['POST'])
-def recommendations():
-    return render_template('recommendations.html')
 
 @app.route('/Recommendations', methods=['POST'])
 def recommendations():
