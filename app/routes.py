@@ -5,6 +5,7 @@ import os
 import sys
 from .userstory1 import conversation_loop
 from .userstory3 import recommendations_conversation_loop
+from .userstory2 import main
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the file path to data.csv
 db_file_path = os.path.join(current_dir, 'data', 'database.db')
@@ -74,7 +75,9 @@ def missing_info():
 
 @app.route('/Targeted_questions', methods=['POST'])
 def targeted_questions():
-    return render_template('targeted_questions.html')
+    targeted_questions_list = main()
+    questions_to_display = targeted_questions_list.split('\n') 
+    return render_template('targeted_questions.html', questions=questions_to_display)
 
 @app.route('/Recommendations', methods=['POST'])
 def recommendations():
