@@ -4,6 +4,7 @@ from app import app
 import os
 import sys
 from .userstory1 import conversation_loop
+from .userstory3 import recommendations_conversation_loop
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the file path to data.csv
 db_file_path = os.path.join(current_dir, 'data', 'database.db')
@@ -78,6 +79,11 @@ def targeted_questions():
 @app.route('/Recommendations', methods=['POST'])
 def recommendations():
     return render_template('recommendations.html')
+
+@app.route('/Recommendations', methods=['POST'])
+def recommendations():
+    reco = recommendations_conversation_loop()
+    return render_template('recommendations.html', reco=reco)
 
 @app.route('/operation4')
 def operation4():

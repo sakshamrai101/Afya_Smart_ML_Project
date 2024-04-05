@@ -13,8 +13,7 @@
     <div class="card">
         <h2>Validated Recommendations</h2>
         <div class="recommendations">
-            <p>Recommendation 1: <span>Implement a new treatment protocol for...</span></p>
-            <p>Recommendation 2: <span>Review patient history before prescribing...</span></p>
+            <p>{{ reco }}</p>
         </div>
         <h3>Were these recommendations helpful?</h3>
         <form class="feedback-form">
@@ -25,12 +24,36 @@
                 <option value="very-helpful">Very helpful</option>
                 <option value="extremely-helpful">Extremely helpful</option>
             </select>
+            <div class="criteria">
+                <label for="criteria1">Reflects clinical and scientific response:</label>
+                <select id="criteria1" name="criteria1"></select>
+            </div>
+            <div class="criteria">
+                <label for="criteria2">Low likelihood of harm:</label>
+                <select id="criteria2" name="criteria2"></select>
+            </div>
+            <div class="criteria">
+                <label for="criteria2">Relevant content:</label>
+                <select id="criteria2" name="criteria2"></select>
+            </div>
+            <div class="criteria">
+                <label for="criteria2">No missing important information:</label>
+                <select id="criteria2" name="criteria2"></select>
+            </div>
             <textarea class="feedback" placeholder="Additional feedback..."></textarea>
             <!--<button type="submit" class="done-button">Done</button>-->
             <button id="doneButton" class="done-button">Done</button>
         </form>
     </div>
 
+    <script src="options.js"></script>
+    <script>
+        document.getElementById('criteria1').innerHTML = ratingOptions;
+        document.getElementById('criteria2').innerHTML = ratingOptions;
+        document.getElementById('criteria3').innerHTML = ratingOptions;
+        document.getElementById('criteria4').innerHTML = ratingOptions;
+        // Add more lines if needed for additional criteria
+    </script>
     <!-- Define doneURL variable using script tag -->
     <!-- Define doneURL variable using script tag -->
     <script>
