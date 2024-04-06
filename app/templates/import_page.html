@@ -34,6 +34,7 @@
             border-color: #f4a34c;
             color: white;
             width: 100%;
+         
         }
 
         .custom-button:hover {
@@ -43,7 +44,7 @@
 
         .card {
             background-color: #fff;
-            border: 2px dashed black;
+            border: 2px solid black;
             padding: 20px;
             width: 100%;
             box-sizing: border-box;
@@ -59,20 +60,21 @@
 
         .card-top {
             padding: 20px;
-            border: 1px solid black;
+            border: 2px solid black;
             border-radius: 8px;
             height: 220px;
         }
 
         .card-bottom {
             padding: 20px;
-            border: 1px solid black;
+            border: 2px solid black;
             border-radius: 8px;
             height: 220px;
         }
 
         h5 {
             text-align: center;
+            font-size: medium;
         }
 
         .custom-file-label::after {
@@ -101,6 +103,8 @@
             animation: spin 1s linear infinite;
         }
 
+
+
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
@@ -120,17 +124,37 @@
                 <h5>Welcome, {{ username }}</h5>
                 <h5>Reference E-consult Data</h5>
                 <div class="row">
-                    <form id="boneFractureForm" action="/operation3" method="post">
-                            <div class="col">
-                                <button class="btn btn-outline-secondary custom-button" type="submit">Bone Fracture</button>
-                            </div>
-                    </form>
-                    <form id="oralSurgeryForm" action="/operation2" method="post">
-                            <div class="col">
-                                <button class="btn btn-outline-secondary custom-button" type="submit">Oral Surgery</button>
-                            </div>
-                    </form>
+                    <div class="col">
+                        <form id="boneFractureForm" action="/operation3" method="post">
+                            <button class="btn btn-outline-secondary custom-button" type="submit">Bone Fracture</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
+                    </div>
                 </div>
+                <div class="mt-2"></div> <!-- Add margin between rows -->
+                <div class="row">
+                    <div class="col">
+                        <form id="oralSurgeryForm" action="/operation2" method="post">
+                            <button class="btn btn-outline-secondary custom-button" type="submit">Oral Surgery</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
+                    </div>
+                </div>
+                <div class="mt-2"></div> <!-- Add margin between rows -->
+                <div class="row">
+                    <div class="col" id="pneumoniaButtonContainer">
+                       
+                    </div>
+                    <div class="col" id="pneumoniaButtonViewContainer">
+                      
+                    </div>
+                </div>
+               
+                
             </div>
             <div class="card-bottom">
                 <h5>Import E-consult Data</h5>
@@ -177,29 +201,30 @@
         }
 
         function addPneumoniaButton() {
+            var container = document.getElementById('pneumoniaButtonContainer');
+
             // Create a form element with the desired id
             var newForm = document.createElement("form");
             newForm.id = "pneumoniaForm";
             newForm.action = "/operation1"; // Set the form action to the appropriate URL
             newForm.method = "post";
 
-            // Add a new row for the "Pneumonia" button
-            var newRow = document.createElement("div");
-            newRow.className = "row mt-3"; // Add margin top
-            newRow.appendChild(document.createElement("div")).className = "col";
-            newForm.appendChild(newRow);
-
             // Add the "Pneumonia" button
             var newButton = document.createElement("button");
             newButton.className = "btn btn-outline-secondary custom-button";
             newButton.type = "submit";
             newButton.textContent = "Pneumonia";
-            newButton.style.width = "120px";
 
-            newRow.querySelector(".col").appendChild(newButton);
+            newForm.appendChild(newButton);
+            container.appendChild(newForm);
 
-            var cardTop = document.querySelector('.card-top');
-            cardTop.appendChild(newForm);
+            // Add the "View" button to the same container
+            var viewButtonContainer = document.getElementById("pneumoniaButtonViewContainer");
+            var viewButton = document.createElement("button");
+            viewButton.className = "btn btn-outline-secondary custom-button float-right";
+            viewButton.type = "submit";
+            viewButton.textContent = "View";
+            viewButtonContainer.appendChild(viewButton);
 
             localStorage.setItem('buttonAdded', 'true');
         }
