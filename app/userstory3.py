@@ -14,7 +14,7 @@ client = OpenAI(api_key = Config.OPENAI_API_KEY)
                 
 def get_recommendations(user_input, guidelines_text):
     # Construct message
-    messages.append({'role':'user','content':f"you are a primary care provider, and I now give you a standard guidelines and a patient's consult data, you need to give 3 evidence-based recommendations including both treatment options and potential next steps for patient care. stardard PCP consultation note:{guidelines_text}, and patient's data: {user_input}"})
+    messages.append({'role':'user','content':f"you are a primary care provider, and I now give you a standard guidelines and a patient's consult data, you need to give 3 recommendations on diagnostic testing, medication recommendation and patient education/management. stardard PCP consultation note:{guidelines_text}, and patient's data: {user_input}"})
 
     completion = client.chat.completions.create(
         max_tokens = 3000,
