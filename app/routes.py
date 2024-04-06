@@ -6,6 +6,11 @@ import sys
 from .userstory1 import conversation_loop
 from .userstory3 import recommendations_conversation_loop
 from .userstory2 import main
+from twilio.rest import Client 
+from .keys import account_sid, target_number, auth_token, twilio_number
+
+
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the file path to data.csv
 db_file_path = os.path.join(current_dir, 'data', 'database.db')
@@ -71,6 +76,20 @@ def operation1():
 @app.route('/Missing_info', methods=['POST'])
 def missing_info():
     missing_info_list = conversation_loop()
+    
+    # Convert missing_info_list to a formatted string
+    formatted_message = "\n".join([f"{item['number']}. {item['info']}" for item in missing_info_list])
+
+    # Setup for sending notifications to PCP upon generating missing info checklist.
+    client = Client(account_sid, auth_token)
+
+    # Send the formatted message as the body of the Twilio message
+    message = client.messages.create(
+        body=formatted_message,
+        from_=twilio_number,
+        to=target_number
+    )
+
     return render_template('missing_info.html', missing_info_list=missing_info_list)
 
 @app.route('/Targeted_questions', methods=['POST'])

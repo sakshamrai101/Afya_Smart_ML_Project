@@ -14,7 +14,6 @@ COMMUNITY FIRST HEALTH PLANS PCP MEDICAL RECORD DOCUMENTATION AND CONTINUITY GUI
 """
 def generate_targeted_questions(econsult_data, guidelines_text):
     """
-    Generate targeted questions for the PCP to review and forward to the specialist based on eConsult data and standard guidelines.
 
     :param econsult_data: A string containing the eConsult data.
     :param guidelines_text: A string containing the standard eConsult guidelines.
@@ -30,11 +29,9 @@ def generate_targeted_questions(econsult_data, guidelines_text):
         messages=messages
     )
 
-    # Extract and return the generated questions from the completion
     questions = completion.choices[0].message.content.strip()
     return questions
 def main():
-    # Example eConsult data, as provided in the previous code snippet
     user_input = """
     Patient Name: John Smith
     Date of Visit: 03/25/2023
