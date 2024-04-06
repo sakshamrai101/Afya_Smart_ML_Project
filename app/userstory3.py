@@ -68,6 +68,6 @@ Assessment and Plan:
     """
     # Process user input
     recommendations = get_recommendations(user_input, guidelines_text)
-
+    
     # Format and return missing information
     return recommendations

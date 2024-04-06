@@ -79,6 +79,7 @@ def targeted_questions():
 @app.route('/Recommendations', methods=['POST'])
 def recommendations():
     reco = recommendations_conversation_loop()
+    reco = '<br>'.join(reco.split('\n'))
     return render_template('recommendations.html', reco=reco)
 
 @app.route('/operation4')

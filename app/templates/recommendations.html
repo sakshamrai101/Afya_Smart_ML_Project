@@ -13,9 +13,9 @@
     <div class="card">
         <h2>Validated Recommendations</h2>
         <div class="recommendations">
-            <p>{{ reco }}</p>
+            {{ reco|safe|replace('**', '') }}
         </div>
-        <h3>Clinical review of recommendations</h3>
+        <h4>Clinical review of recommendations</h4>
         <form class="feedback-form">
             <div class="criteria">
                 <label for="criteria1">Reflects clinical and scientific response:</label>
