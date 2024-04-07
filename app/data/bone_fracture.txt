@@ -1,0 +1,31 @@
+Patient Name: Sarah Johnson
+Date of Birth: 05/15/1980
+Date of Visit: 04/10/2023
+Chief Complaint: Left leg pain and swelling
+
+History of Present Illness:
+Ms. Johnson presents today with complaints of left leg pain and swelling following a fall while hiking yesterday. She reports difficulty bearing weight on the left leg and significant bruising around the knee.
+
+Past Medical History:
+- None
+
+Medications:
+- None
+
+Family History:
+- Father: Hypertension
+- Mother: Hyperlipidemia
+
+Social History:
+- Non-smoker
+- Occasional alcohol use
+
+Physical Exam:
+- Left leg: Obvious deformity and tenderness over the left knee, limited range of motion
+- Vital Signs: BP 120/80, HR 80, RR 16, Temp 98.6°F
+
+Assessment and Plan:
+1. Confirm diagnosis with X-ray
+2. Immobilize the left leg with a splint
+3. Prescribe pain medication and advise rest
+4. Schedule follow-up appointment in 1 week for reassessment

@@ -126,11 +126,11 @@
                 <div class="row">
                     <div class="col">
                         <form id="boneFractureForm" action="/operation3" method="post">
-                            <button class="btn btn-outline-secondary custom-button" type="submit">Bone Fracture</button>
+                            <button class="btn btn-outline-secondary custom-button" type="submit" onclick="">Bone Fracture</button>
                         </form>
                     </div>
                     <div class="col">
-                        <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
+                        <button class="btn btn-outline-secondary custom-button float-right" type="submit" onclick="viewBoneFracture()">View</button>
                     </div>
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
@@ -141,7 +141,7 @@
                         </form>
                     </div>
                     <div class="col">
-                        <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
+                        <button class="btn btn-outline-secondary custom-button float-right" type="submit" onclick="viewOralSurgery()">View</button>
                     </div>
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
@@ -263,6 +263,54 @@
                 window.open(url, '_blank');
             }
         }
+
+        function viewBoneFracture() {
+            fetch('../data/bone_fracture.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    var blob = new Blob([data], { type: 'text/plain' });
+                    var url = URL.createObjectURL(blob);
+                    var newTab = window.open(url, '_blank');
+                    if (!newTab) {
+                        alert('Please allow popups for this website');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function viewOralSurgery() {
+            fetch('../data/oral_surgery.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    var blob = new Blob([data], { type: 'text/plain' });
+                    var url = URL.createObjectURL(blob);
+                    var newTab = window.open(url, '_blank');
+                    if (!newTab) {
+                        alert('Please allow popups for this website');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+
+
+
+
 
     </script>
     <script src="{{ url_for('static', filename='js/click_data.js') }}"></script>

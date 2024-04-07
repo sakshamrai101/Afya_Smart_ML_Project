@@ -1,0 +1,31 @@
+Patient Name: Mark Davis
+Date of Birth: 08/25/1975
+Date of Visit: 05/20/2023
+Chief Complaint: Toothache and gum swelling
+
+History of Present Illness:
+Mr. Davis presents today with complaints of severe toothache and swelling in the gums around the lower left molars. He reports the pain started a week ago and has been progressively worsening despite over-the-counter pain medications.
+
+Past Medical History:
+- None
+
+Medications:
+- Ibuprofen 400mg as needed for pain
+
+Family History:
+- Father: Hypertension
+- Mother: Diabetes
+
+Social History:
+- Non-smoker
+- Rare alcohol use
+
+Physical Exam:
+- Oral Exam: Swelling and tenderness in the gums around the lower left molars, visible cavity in the lower left first molar
+- Vital Signs: BP 130/80, HR 70, RR 16, Temp 98.4°F
+
+Assessment and Plan:
+1. Confirm diagnosis with dental X-ray
+2. Extract the decayed tooth
+3. Prescribe antibiotics for infection
+4. Schedule follow-up appointment in 1 week for post-operative check
