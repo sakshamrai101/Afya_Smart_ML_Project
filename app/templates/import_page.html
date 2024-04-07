@@ -16,7 +16,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://source.unsplash.com/1280x960/?care');
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../static/images/bg.jpeg');
         }
 
         .container {
@@ -130,7 +130,9 @@
                         </form>
                     </div>
                     <div class="col">
-                        <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
+                        <form id="viewBoneFractureForm" action="/view_boneFracture_file" method="get">
+                            <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
+                        </form>
                     </div>
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
@@ -141,7 +143,9 @@
                         </form>
                     </div>
                     <div class="col">
-                        <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
+                        <form id="viewOralSurgeryForm" action="/view_oralSurgery_file" method="get">
+                            <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
+                        </form>
                     </div>
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
@@ -218,13 +222,22 @@
             newForm.appendChild(newButton);
             container.appendChild(newForm);
 
+
+            
             // Add the "View" button to the same container
             var viewButtonContainer = document.getElementById("pneumoniaButtonViewContainer");
+            var viewForm = document.createElement("form");
+            viewForm.id = "viewPneumoniaForm";
+            viewForm.action = "/view_pneumonia_file"; // Set the form action to the appropriate URL
+            viewForm.method = "get";
+
             var viewButton = document.createElement("button");
             viewButton.className = "btn btn-outline-secondary custom-button float-right";
             viewButton.type = "submit";
             viewButton.textContent = "View";
-            viewButtonContainer.appendChild(viewButton);
+
+            viewForm.appendChild(viewButton)
+            viewButtonContainer.appendChild(viewForm);
 
             localStorage.setItem('buttonAdded', 'true');
         }

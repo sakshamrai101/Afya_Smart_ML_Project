@@ -1,0 +1,12 @@
+Patient Name: John Doe
+Age: 45
+Gender: Male
+Date of Injury: 2024-04-10
+Type of Fracture: Compound Fracture
+Location: Right Femur
+Severity: Moderate
+Treatment Plan:
+- Immediate stabilization of the fracture using external fixation
+- Antibiotics to prevent infection
+- Pain management with analgesics
+- Surgery scheduled for internal fixation within 48 hours

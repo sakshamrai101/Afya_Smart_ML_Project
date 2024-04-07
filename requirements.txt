@@ -3,3 +3,4 @@ requests==2.31.0
 pandas==2.2.1
 pysqlite3==0.5.2
 openai==1.16.2
+twilio==9.0.4
