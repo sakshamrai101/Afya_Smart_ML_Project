@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file
 import sqlite3
 from app import app
 import os
@@ -107,3 +107,15 @@ def recommendations():
 @app.route('/operation4')
 def operation4():
     return render_template('operation4.html')
+
+@app.route('/view_bone_fracture')
+def view_bone_fracture():
+    # Assuming the 'bone_fracture.txt' file is in the 'data' directory
+    file_path = 'data/bone_fracture.txt'
+    return send_file(file_path, as_attachment=False)
+
+@app.route('/view_oral_surgery')
+def view_oral_surgery():
+    # Assuming the 'bone_fracture.txt' file is in the 'data' directory
+    file_path = 'data/oral_surgery.txt'
+    return send_file(file_path, as_attachment=False)

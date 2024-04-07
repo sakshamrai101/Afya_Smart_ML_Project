@@ -262,44 +262,38 @@
                 var url = URL.createObjectURL(blob);
                 window.open(url, '_blank');
             }
-        }
+        }  
 
         function viewBoneFracture() {
-            fetch('../data/bone_fracture.txt')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
+            fetch('/view_bone_fracture')
+                .then(response => response.text())
                 .then(data => {
-                    var blob = new Blob([data], { type: 'text/plain' });
-                    var url = URL.createObjectURL(blob);
-                    var newTab = window.open(url, '_blank');
-                    if (!newTab) {
-                        alert('Please allow popups for this website');
-                    }
+                    // Create a Blob object from the text data
+                    const blob = new Blob([data], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    // Open the URL in a new tab
+                    window.open(url, '_blank');
+                    // Revoke the object URL to free up resources
+                    URL.revokeObjectURL(url);
                 })
                 .catch(error => {
                     console.error('Error:', error);
                 });
         }
 
+
+
         function viewOralSurgery() {
-            fetch('../data/oral_surgery.txt')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
+            fetch('/view_oral_surgery')
+                .then(response => response.text())
                 .then(data => {
-                    var blob = new Blob([data], { type: 'text/plain' });
-                    var url = URL.createObjectURL(blob);
-                    var newTab = window.open(url, '_blank');
-                    if (!newTab) {
-                        alert('Please allow popups for this website');
-                    }
+                    // Create a Blob object from the text data
+                    const blob = new Blob([data], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    // Open the URL in a new tab
+                    window.open(url, '_blank');
+                    // Revoke the object URL to free up resources
+                    URL.revokeObjectURL(url);
                 })
                 .catch(error => {
                     console.error('Error:', error);
