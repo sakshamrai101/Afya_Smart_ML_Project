@@ -15,12 +15,12 @@ from config import Config
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the file path to data.csv
-db_file_path = os.path.join(current_dir, 'data', 'database.db')
-pneumonia_econsult_file_path = os.path.join(current_dir, 'data', 'pneumonia_econsult_data.txt')
-boneFracture_econsult_file_path = os.path.join(current_dir, 'data', 'boneFracture_econsult_data.txt')
-oral_Surgery_econsult_file_path = os.path.join(current_dir, 'data', 'oral_Surgery_econsult_data.txt')
+db_file_path = os.path.join(current_dir, 'data_econsult', 'database.db')
+pneumonia_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'pneumonia_econsult_data.txt')
+boneFracture_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'boneFracture_econsult_data.txt')
+oral_Surgery_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'oral_Surgery_econsult_data.txt')
 
-updated_file_path = os.path.join(current_dir, 'data', 'pneumonia_updated_econsult_data.txt')
+updated_file_path = os.path.join(current_dir, 'data_econsult', 'pneumonia_updated_econsult_data.txt')
 file_content = read_file(pneumonia_econsult_file_path)
 shutil.copyfile(pneumonia_econsult_file_path, updated_file_path)
 account_sid = Config.ACCOUNT_SID
@@ -81,7 +81,7 @@ def operation2():
     return render_template('operation2.html')
 
 # Route to handle logout
-@app.route('/logout')
+@app.route('/logout', methods=['POST'])
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))

@@ -175,6 +175,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-2"></div>
+                <div class="row">
+                    <div class="col">
+                        <form id="logoutForm" action="/logout" method="post">
+                            <button class="btn btn-outline-secondary custom-button" type="submit">Logout</button>
+                        </form>
+                    </div>
+                </div>    
             </div>
         </div>
 
@@ -247,14 +255,9 @@
             viewButton.className = "btn btn-outline-secondary custom-button float-right";
             viewButton.type = "submit";
             viewButton.textContent = "View";
-<<<<<<< HEAD
 
             viewForm.appendChild(viewButton)
             viewButtonContainer.appendChild(viewForm);
-=======
-            viewButton.onclick = viewFile;
-            viewButtonContainer.appendChild(viewButton);
->>>>>>> 91d2ea9b042cc1a6f1eba492e4878c5eb9a742f0
 
             localStorage.setItem('buttonAdded', 'true');
         }
