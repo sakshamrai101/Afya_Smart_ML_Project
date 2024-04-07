@@ -185,7 +185,10 @@
     </div>
     <script>
         function showLoading() {
+
+            // Show the loading overlay
             document.getElementById('loadingOverlay').style.display = 'flex';
+
             setTimeout(() => {
                 // Check if the button has already been added
                 var buttonAdded = localStorage.getItem('buttonAdded');
@@ -195,14 +198,23 @@
                     // Set the flag in session storage indicating that the button has been added
                     localStorage.setItem('buttonAdded', 'true');
                 }
+
+                var fileInput = document.getElementById('inputGroupFile04');
+                var file = fileInput.files[0];
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    localStorage.setItem('uploadedFile', event.target.result);
+                };
+        reader.readAsText(file);
                 document.getElementById('loadingOverlay').style.display = 'none';
             }, 1000);
 
             // Remove the 'buttonAdded' flag from localStorage when the page is refreshed
             window.addEventListener('beforeunload', function() {
-            localStorage.removeItem('buttonAdded');
-    });
-        }
+                localStorage.removeItem('buttonAdded');
+            });
+         }
+
 
         function addPneumoniaButton() {
             var container = document.getElementById('pneumoniaButtonContainer');
@@ -235,9 +247,14 @@
             viewButton.className = "btn btn-outline-secondary custom-button float-right";
             viewButton.type = "submit";
             viewButton.textContent = "View";
+<<<<<<< HEAD
 
             viewForm.appendChild(viewButton)
             viewButtonContainer.appendChild(viewForm);
+=======
+            viewButton.onclick = viewFile;
+            viewButtonContainer.appendChild(viewButton);
+>>>>>>> 91d2ea9b042cc1a6f1eba492e4878c5eb9a742f0
 
             localStorage.setItem('buttonAdded', 'true');
         }
@@ -254,6 +271,16 @@
             // Enable the upload button
             document.getElementById('uploadButton').disabled = false;
         }
+
+        function viewFile() {
+            var uploadedFile = localStorage.getItem('uploadedFile');
+            if (uploadedFile) {
+                var blob = new Blob([uploadedFile], { type: 'text/plain' });
+                var url = URL.createObjectURL(blob);
+                window.open(url, '_blank');
+            }
+        }
+
     </script>
     <script src="{{ url_for('static', filename='js/click_data.js') }}"></script>
 
