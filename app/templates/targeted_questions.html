@@ -14,10 +14,12 @@
         <h2>Targeted Questions List</h2>
         <ul class="question-list">
             {% for question in questions %}
-            <li class="question">{{ question }}</li>
+            <li class="question">
+                {{ question }}
+                <textarea class="feedback" placeholder="Provide feedback here..."></textarea>
+            </li>
             {% endfor %}
         </ul>
-        <textarea class="feedback" placeholder="Provide feedback here..."></textarea>
         <button id="doneButton" class="done-button">Done</button>
     </div>
 
