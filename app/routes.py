@@ -71,17 +71,17 @@ def import_page():
     else:
         return redirect(url_for('index'))
 
-@app.route('/view_boneFracture_file', methods=['GET'])
-def view_boneFracture_file():
-    return send_file(boneFracture_econsult_file_path)
+# @app.route('/view_boneFracture_file', methods=['GET'])
+# def view_boneFracture_file():
+#     return send_file(boneFracture_econsult_file_path)
 
-@app.route('/view_oralSurgery_file', methods=['GET'])
-def view_oralSurgery_file():
-    return send_file(oral_Surgery_econsult_file_path)
+# @app.route('/view_oralSurgery_file', methods=['GET'])
+# def view_oralSurgery_file():
+#     return send_file(oral_Surgery_econsult_file_path)
 
-@app.route('/view_pneumonia_file', methods=['GET'])
-def view_pneumonia_file():
-    return send_file(pneumonia_econsult_file_path)
+# @app.route('/view_pneumonia_file', methods=['GET'])
+# def view_pneumonia_file():
+#     return send_file(pneumonia_econsult_file_path)
    
 @app.route('/operation3', methods=['GET','POST'])
 def operation3():
