@@ -1,29 +1,28 @@
-Patient Name: Emily Adams
-Date of Birth: 10/12/1965
-Date of Visit: 06/05/2023
-Chief Complaint: Diabetes management
+Patient Name: Michael Brown
+Date of Birth: 03/18/1978
+Date of Visit: 07/15/2023
+Chief Complaint: Lower back pain
 
 History of Present Illness:
-Ms. Adams presents today for a routine follow-up for her diabetes management. She reports occasional episodes of hyperglycemia despite adherence to her medication regimen and diet. She denies any symptoms of hypoglycemia.
+Mr. Brown presents today with complaints of lower back pain that started a week ago after lifting heavy furniture. He describes the pain as dull and achy, radiating down his left leg. He reports no numbness or tingling in his legs.
 
 Past Medical History:
-- Hypertension
-- Hyperlipidemia
+- Degenerative disc disease
 
 Medications:
-- Metformin 1000mg twice daily
-- Lisinopril 10mg daily
-- Atorvastatin 20mg daily
+- Naproxen 500mg twice daily as needed for pain
 
 Social History:
 - Non-smoker
-- Rare alcohol use
+- Occasional alcohol use
 
 Physical Exam:
-- General: Appears well, in no acute distress
-- Vital Signs: BP 130/80, HR 70, RR 16, Temp 98.4°F
+- General: Appears uncomfortable due to pain
+- Vital Signs: BP 120/80, HR 80, RR 16, Temp 98.6°F
+- Musculoskeletal: Decreased range of motion and tenderness over the lumbar spine, positive straight leg raise test on the left
 
 Assessment and Plan:
-1. Review and optimize diabetes management regimen
-2. Discuss lifestyle modifications to improve glycemic control
-3. Schedule follow-up appointment in 3 months for diabetes management
+1. Order lumbar spine X-ray
+2. Prescribe muscle relaxants for pain relief
+3. Refer to physical therapy for strengthening exercises
+4. Schedule follow-up appointment in 2 weeks for reevaluation
