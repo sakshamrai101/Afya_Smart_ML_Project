@@ -51,7 +51,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 500px;
-            height: 500px;
+            height: 600px;
             margin: 10px;
             display: flex;
             flex-direction: column;
@@ -62,14 +62,14 @@
             padding: 20px;
             border: 2px solid black;
             border-radius: 8px;
-            height: 220px;
+            height: 270px;
         }
 
         .card-bottom {
             padding: 20px;
             border: 2px solid black;
             border-radius: 8px;
-            height: 220px;
+            height: 270px;
         }
 
         .navbar {
@@ -222,9 +222,22 @@
                 var file = fileInput.files[0];
                 var reader = new FileReader();
                 reader.onload = function(event) {
-                    localStorage.setItem('uploadedFile', event.target.result);
-                };
-        reader.readAsText(file);
+            
+                    var fileContent = event.target.result;
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "/store_file_content", true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            console.log("File content sent to server successfully");
+                        }
+                    };
+                    xhr.send(JSON.stringify({ "fileContent": fileContent }));
+                        };
+                reader.readAsText(file);
+
+
+
                 document.getElementById('loadingOverlay').style.display = 'none';
             }, 1000);
 
@@ -237,6 +250,11 @@
 
         function addPneumoniaButton() {
             var container = document.getElementById('pneumoniaButtonContainer');
+            var input = document.getElementById('inputGroupFile04');
+            var fileName = input.files[0].name;
+            
+            // Extract the file name without the extension
+            var fileNameWithoutExtension = fileName.replace(/\.[^/.]+$/, "");
 
             // Create a form element with the desired id
             var newForm = document.createElement("form");
@@ -248,7 +266,7 @@
             var newButton = document.createElement("button");
             newButton.className = "btn btn-outline-secondary custom-button";
             newButton.type = "submit";
-            newButton.textContent = "Pneumonia";
+            newButton.textContent = fileNameWithoutExtension;
 
             newForm.appendChild(newButton);
             container.appendChild(newForm);

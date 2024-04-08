@@ -21,7 +21,7 @@ def generate_targeted_questions(econsult_data, guidelines_text):
     """
     messages = [{
         'role': 'user',
-        'content': f"You are a Primary Care Provider and provided the standard eConsult guidelines and patient's consultation notes, I want you to generate a list of 3-4 MOST important targeted questions for the PCP to review and send over to the specialist for further diagnosis. Standard eConsult guidelines: {guidelines_text}, and patient's data: {econsult_data}"
+        'content': f"You are a Primary Care Provider and provided the standard eConsult guidelines and patient's consultation notes, I want you to generate a list of 3-4 MOST important targeted questions in professional way for the PCP to review and send over to the specialist for further diagnosis. Standard eConsult guidelines: {guidelines_text}, and patient's data: {econsult_data}"
     }]
     completion = client.chat.completions.create(
         max_tokens=1000,
@@ -31,44 +31,11 @@ def generate_targeted_questions(econsult_data, guidelines_text):
 
     questions = completion.choices[0].message.content.strip()
     return questions
-def main():
-    user_input = """
-    Patient Name: John Smith
-    Date of Visit: 03/25/2023
-    Chief Complaint: Shortness of breath and cough
-
-    History of Present Illness:
-    Mr. Smith presents today with complaints of shortness of breath and cough with yellow-green sputum production for the past week. He reports a fever of 101°F and chest pain that worsens with deep breathing or coughing.
-    - Hypertension
-    - Hyperlipidemia
-
-    Medications:
-    - Lisinopril 10mg daily
-    - Atorvastatin 20mg daily
-
-    Family History:
-    - Father: Hypertension
-    - Mother: Hyperlipidemia
-
-    Social History:
-    - Non-smoker
-    - Rare alcohol use
-
-    Physical Exam:
-    - General: Appears ill, in moderate distress
-    - Vital Signs: BP 140/90, HR 100, RR 24, Temp 101°F
-    - Respiratory: Decreased breath sounds and crackles on the right lower lung field
-
-    Assessment and Plan:
-    1. Confirm diagnosis with chest X-ray
-    2. Start empirical antibiotic therapy for community-acquired pneumonia
-    3. Prescribe albuterol inhaler for bronchodilation
-    4. Advise bed rest and adequate fluid intake
-    5. Follow up in 3 days for reassessment
-    """
+def main(econsult_data):
+    
 
     # Generate targeted questions based on the eConsult data
-    targeted_questions = generate_targeted_questions(user_input, guidelines_text)
+    targeted_questions = generate_targeted_questions(econsult_data, guidelines_text)
     return targeted_questions
 
 if __name__ == "__main__":

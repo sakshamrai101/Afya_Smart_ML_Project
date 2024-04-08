@@ -3,7 +3,7 @@ import sqlite3
 from app import app
 import os
 import sys
-from .file_operations import read_file, add_content
+from .file_operations import read_file, add_content, write_file
 from .userstory1 import conversation_loop
 from .userstory3 import recommendations_conversation_loop
 from .userstory2 import main
@@ -12,22 +12,33 @@ import shutil
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import Config
-
+global eConsult_file_path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the file path to data.csv
 db_file_path = os.path.join(current_dir, 'data_econsult', 'database.db')
-pneumonia_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'pneumonia_econsult_data.txt')
+eConsult_file_path = os.path.join(current_dir, 'data_econsult', 'eConsult.txt')
 boneFracture_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'boneFracture_econsult_data.txt')
 oral_Surgery_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'oral_Surgery_econsult_data.txt')
 
-updated_file_path = os.path.join(current_dir, 'data_econsult', 'pneumonia_updated_econsult_data.txt')
-file_content = read_file(pneumonia_econsult_file_path)
-shutil.copyfile(pneumonia_econsult_file_path, updated_file_path)
+updated_file_path = os.path.join(current_dir, 'data_econsult', 'updated_econsult_data.txt')
 account_sid = Config.ACCOUNT_SID
 auth_token = Config.AUTH_TOKEN
 twilio_number = Config.TWILIO_NUMBER
 target_number = Config.TARGET_NUMBER
 
+file_content = None
+
+
+@app.route('/store_file_content', methods=['POST'])
+def store_file_content():
+    global file_content  # Access the global variable
+    data = request.get_json()
+    file_content = data.get('fileContent')
+    write_file(eConsult_file_path, file_content)
+  
+    return 'File content stored successfully'
+
+shutil.copyfile(eConsult_file_path, updated_file_path)
 
 # Route to handle user login
 @app.route('/', methods=["GET"])
@@ -92,7 +103,8 @@ def operation1():
 
 @app.route('/Missing_info', methods=['POST'])
 def missing_info():
-    missing_info_list = conversation_loop()
+    
+    missing_info_list = conversation_loop(file_content)
     add_content(updated_file_path, "\n Missing list \n")
 
     # Convert missing_info_list to a formatted string
@@ -115,13 +127,14 @@ def missing_info():
 
 @app.route('/Targeted_questions', methods=['POST'])
 def targeted_questions():
-    targeted_questions_list = main()
+    targeted_questions_list = main(file_content)
     questions_to_display = targeted_questions_list.split('\n') 
     return render_template('targeted_questions.html', questions=questions_to_display)
 
 @app.route('/Recommendations', methods=['POST'])
 def recommendations():
-    reco = recommendations_conversation_loop()
+
+    reco = recommendations_conversation_loop(file_content)
     add_content(updated_file_path, '\n Recommendations \n')
     add_content(updated_file_path, reco)
     reco = '<br>'.join(reco.split('\n'))

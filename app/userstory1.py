@@ -11,46 +11,7 @@ COMMUNITY FIRST HEALTH PLANS PCP MEDICAL RECORD DOCUMENTATION AND CONTINUITY GUI
 messages = []
 client = OpenAI(api_key = Config.OPENAI_API_KEY)
 # Start a conversation loop
-def conversation_loop():
-
-    # Get user input
-    user_input = """
-    Patient Name: John Smith
-    Date of Visit: 03/25/2023
-    Chief Complaint: Shortness of breath and cough
-
-    History of Present Illness:
-    Mr. Smith presents today with complaints of shortness of breath and cough with yellow-green sputum production for the past week. He reports a fever of 101°F and chest pain that worsens with deep breathing or coughing.
-
-    - Hypertension
-    - Hyperlipidemia
-    - 
-
-    - Lisinopril 10mg daily
-    - Atorvastatin 20mg daily
-    - 
-
-    - Father: Hypertension
-    - Mother: Hyperlipidemia
-    - 
-
-    - Non-smoker
-    - Rare alcohol use
-    - 
-
-    Physical Exam:
-    - General: Appears ill, in moderate distress
-    - Vital Signs: BP 140/90, HR 100, RR 24, Temp 101°F
-    - Respiratory: Decreased breath sounds and crackles on the right lower lung field
-
-    Assessment and Plan:
-    1. Confirm diagnosis with chest X-ray
-    2. Start empirical antibiotic therapy for community-acquired pneumonia
-    3. Prescribe albuterol inhaler for bronchodilation
-    4. Advise bed rest and adequate fluid intake
-    5. Follow up in 3 days for reassessment
-
-    """
+def conversation_loop(user_input):
     # Process user input
     missing_info = get_missing_info(user_input, guidelines_text)
 

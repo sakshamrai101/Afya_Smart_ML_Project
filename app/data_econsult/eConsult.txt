@@ -1,0 +1,35 @@
+Patient Name: Sarah Johnson
+Date of Birth: 05/15/1970
+Date of Visit: 09/10/2023
+Chief Complaint: Headaches, nausea, and weakness on the left side
+
+History of Present Illness:
+Ms. Johnson presents today with complaints of persistent headaches, nausea, and weakness on the left side of her body. She reports that the symptoms have been gradually worsening over the past month and are not relieved with over-the-counter medications.
+
+Past Medical History:
+- Hypertension
+- Hyperlipidemia
+- History of breast cancer (in remission)
+
+Medications:
+- Amlodipine 5mg daily for hypertension
+- Atorvastatin 20mg daily for hyperlipidemia
+
+Social History:
+- Non-smoker
+- Occasional alcohol use
+
+Family History:
+- Mother: Breast cancer
+- Father: Hypertension
+
+Physical Exam:
+- General: Appears fatigued, no acute distress
+- Neurological: Weakness on the left side, decreased coordination, positive Babinski sign on the left
+
+Assessment and Plan:
+1. Order MRI of the brain to evaluate for tumor
+2. Consult with neurosurgeon for further management
+3. Prescribe anti-nausea medication for symptom relief
+4. Refer to oncologist for coordination of care
+5. Schedule follow-up appointment in 1 week for review of MRI results and treatment plan
