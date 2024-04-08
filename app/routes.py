@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file
+from flask import Flask, render_template, request, redirect, url_for, session, flash, send_file, jsonify
 import sqlite3
 from app import app
 import os
@@ -39,6 +39,14 @@ def store_file_content():
     return 'File content stored successfully'
 
 shutil.copyfile(eConsult_file_path, updated_file_path)
+
+@app.route('/view_file_content', methods=['GET'])
+def view_file_content():
+    global file_content
+    if file_content is None:
+        return 'No file content available'
+    
+    return jsonify({'fileContent': file_content})
 
 # Route to handle user login
 @app.route('/', methods=["GET"])

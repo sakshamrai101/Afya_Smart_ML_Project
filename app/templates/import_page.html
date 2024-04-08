@@ -298,14 +298,39 @@
             document.getElementById('uploadButton').disabled = false;
         }
 
+        // function viewFile() {
+        //     var uploadedFile = localStorage.getItem('uploadedFile');
+        //     if (uploadedFile) {
+        //         var blob = new Blob([uploadedFile], { type: 'text/plain' });
+        //         var url = URL.createObjectURL(blob);
+        //         window.open(url, '_blank');
+        //     }
+        // }  
         function viewFile() {
-            var uploadedFile = localStorage.getItem('uploadedFile');
-            if (uploadedFile) {
-                var blob = new Blob([uploadedFile], { type: 'text/plain' });
-                var url = URL.createObjectURL(blob);
-                window.open(url, '_blank');
-            }
-        }  
+            fetch('/view_file_content')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch file content');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    var fileContent = data.fileContent;
+                    if (fileContent) {
+                        var blob = new Blob([fileContent], { type: 'text/plain' });
+                        var url = URL.createObjectURL(blob);
+                        window.open(url, '_blank');
+                    } else {
+                        alert('No file content available');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching file content:', error);
+                    alert('Failed to fetch file content');
+                });
+        }
+
+
 
         function viewBoneFracture() {
             fetch('/view_bone_fracture')

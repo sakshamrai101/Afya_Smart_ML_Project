@@ -1,23 +1,29 @@
+Patient Name: Emily Adams
+Date of Birth: 10/12/1965
+Date of Visit: 06/05/2023
+Chief Complaint: Diabetes management
 
+History of Present Illness:
+Ms. Adams presents today for a routine follow-up for her diabetes management. She reports occasional episodes of hyperglycemia despite adherence to her medication regimen and diet. She denies any symptoms of hypoglycemia.
 
- Missing list 
+Past Medical History:
+- Hypertension
+- Hyperlipidemia
 
-1. Personal Data: Missing information about patient's address, employer, home and work telephone numbers, marital status, and emergency contacts.
-2. Allergies: The patient's medication allergies and adverse reactions are not noted in the consult data.
-3. Problem List: There is no separate list of chronic/significant problems maintained for the patient seen three or more times.
-4. Medication List: The maintenance/ongoing medications list with dosage changes and dates are not included in the patient data.
-5. Advance Directive: There is no documentation of whether the patient has executed an advance directive in the consult data.
+Medications:
+- Metformin 1000mg twice daily
+- Lisinopril 10mg daily
+- Atorvastatin 20mg daily
 
+Social History:
+- Non-smoker
+- Rare alcohol use
 
+Physical Exam:
+- General: Appears well, in no acute distress
+- Vital Signs: BP 130/80, HR 70, RR 16, Temp 98.4°F
 
-
- Recommendations 
-
-Diagnostic Testing Recommendations:
-1. Order MRI of the brain to evaluate for possible tumor given the patient's symptoms of persistent headaches, nausea, weakness on the left side, and positive Babinski sign.
-
-Medication Recommendation:
-2. Prescribe anti-nausea medication to help alleviate the patient's symptoms of nausea. This can provide symptomatic relief while further diagnostic testing and management are underway.
-
-Patient Education/Management:
-3. Educate the patient on the importance of follow-up appointments for review of MRI results and the treatment plan. Encourage the patient to keep a record of symptoms and any changes they may experience. Additionally, provide information on lifestyle modifications to help manage hypertension and hyperlipidemia, such as a healthy diet, regular exercise, and adherence to prescribed medications.
+Assessment and Plan:
+1. Review and optimize diabetes management regimen
+2. Discuss lifestyle modifications to improve glycemic control
+3. Schedule follow-up appointment in 3 months for diabetes management
