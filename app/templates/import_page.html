@@ -72,6 +72,16 @@
             height: 220px;
         }
 
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
         h5 {
             text-align: center;
             font-size: medium;
@@ -119,20 +129,31 @@
 
 <body>
     <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">SmartML - Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form-inline my-2 my-lg-0 ml-auto" id="logoutForm" action="/logout" method="post">
+                    <button class="btn btn-outline-secondary custom-button my-2 my-sm-0" type="submit">Logout</button>
+                </form>
+            </div>
+        </nav>
         <div class="card">
             <div class="card-top">
-                <h5>Welcome, {{ username }}</h5>
+                <h5>Welcome, Dr. {{ username }}</h5>
                 <h5>Reference E-consult Data</h5>
                 <div class="row">
                     <div class="col">
                         <form id="boneFractureForm" action="/operation3" method="post">
-                            <button class="btn btn-outline-secondary custom-button" type="submit">Bone Fracture</button>
+                            <button class="btn btn-outline-secondary custom-button" type="submit" onclick="">Bone Fracture</button>
                         </form>
                     </div>
                     <div class="col">
-                        <form id="viewBoneFractureForm" action="/view_boneFracture_file" method="get">
-                            <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
-                        </form>
+                        <button class="btn btn-outline-secondary custom-button float-right" type="submit" onclick="viewBoneFracture()">View</button>
                     </div>
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
@@ -143,9 +164,7 @@
                         </form>
                     </div>
                     <div class="col">
-                        <form id="viewOralSurgeryForm" action="/view_oralSurgery_file" method="get">
-                            <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
-                        </form>
+                        <button class="btn btn-outline-secondary custom-button float-right" type="submit" onclick="viewOralSurgery()">View</button>
                     </div>
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
@@ -175,14 +194,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-2"></div>
-                <div class="row">
-                    <div class="col">
-                        <form id="logoutForm" action="/logout" method="post">
-                            <button class="btn btn-outline-secondary custom-button" type="submit">Logout</button>
-                        </form>
-                    </div>
-                </div>    
             </div>
         </div>
 
@@ -282,7 +293,49 @@
                 var url = URL.createObjectURL(blob);
                 window.open(url, '_blank');
             }
+        }  
+
+        function viewBoneFracture() {
+            fetch('/view_bone_fracture')
+                .then(response => response.text())
+                .then(data => {
+                    // Create a Blob object from the text data
+                    const blob = new Blob([data], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    // Open the URL in a new tab
+                    window.open(url, '_blank');
+                    // Revoke the object URL to free up resources
+                    URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         }
+
+
+
+        function viewOralSurgery() {
+            fetch('/view_oral_surgery')
+                .then(response => response.text())
+                .then(data => {
+                    // Create a Blob object from the text data
+                    const blob = new Blob([data], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    // Open the URL in a new tab
+                    window.open(url, '_blank');
+                    // Revoke the object URL to free up resources
+                    URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+
+
+
+
 
     </script>
     <script src="{{ url_for('static', filename='js/click_data.js') }}"></script>
