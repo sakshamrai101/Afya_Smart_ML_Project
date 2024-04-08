@@ -25,8 +25,8 @@ def get_recommendations(user_input, guidelines_text):
     recommendations = completion.choices[0].message.content.strip()
     return recommendations
 
-def recommendations_conversation_loop(user_input: str):
-
+def recommendations_conversation_loop(user_input):
+    print('user input for recommendations:', user_input)
     # Process user input
     recommendations = get_recommendations(user_input, guidelines_text)
     

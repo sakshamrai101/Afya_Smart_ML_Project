@@ -13,6 +13,7 @@ client = OpenAI(api_key = Config.OPENAI_API_KEY)
 # Start a conversation loop
 def conversation_loop(user_input):
     # Process user input
+    print('user_input for missing list:', user_input)
     missing_info = get_missing_info(user_input, guidelines_text)
 
     # Format and return missing information

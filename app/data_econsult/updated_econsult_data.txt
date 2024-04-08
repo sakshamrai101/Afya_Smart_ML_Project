@@ -1,29 +1,79 @@
-Patient Name: Emily Adams
-Date of Birth: 10/12/1965
-Date of Visit: 06/05/2023
-Chief Complaint: Diabetes management
+Patient Name: Sarah Johnson
+Date of Birth: 05/15/1980
+Date of Visit: 04/10/2023
+Chief Complaint: Left leg pain and swelling
 
 History of Present Illness:
-Ms. Adams presents today for a routine follow-up for her diabetes management. She reports occasional episodes of hyperglycemia despite adherence to her medication regimen and diet. She denies any symptoms of hypoglycemia.
+Ms. Johnson presents today with complaints of left leg pain and swelling following a fall while hiking yesterday. She reports difficulty bearing weight on the left leg and significant bruising around the knee.
 
 Past Medical History:
-- Hypertension
-- Hyperlipidemia
+- None
 
 Medications:
-- Metformin 1000mg twice daily
-- Lisinopril 10mg daily
-- Atorvastatin 20mg daily
+- None
+
+Family History:
+- Father: Hypertension
+- Mother: Hyperlipidemia
 
 Social History:
 - Non-smoker
-- Rare alcohol use
+- Occasional alcohol use
 
 Physical Exam:
-- General: Appears well, in no acute distress
-- Vital Signs: BP 130/80, HR 70, RR 16, Temp 98.4°F
+- Left leg: Obvious deformity and tenderness over the left knee, limited range of motion
+- Vital Signs: BP 120/80, HR 80, RR 16, Temp 98.6°F
 
 Assessment and Plan:
-1. Review and optimize diabetes management regimen
-2. Discuss lifestyle modifications to improve glycemic control
-3. Schedule follow-up appointment in 3 months for diabetes management
+1. Confirm diagnosis with X-ray
+2. Immobilize the left leg with a splint
+3. Prescribe pain medication and advise rest
+4. Schedule follow-up appointment in 1 week for reassessment
+
+
+ Missing list 
+
+1. Allergies: The patient's record should prominently note any medication allergies or adverse reactions, including immunization reactions. This information is important to ensure safe prescribing practices and avoid potential adverse reactions.
+2. Problem List: For patients seen three or more times, a separate list of all the patient’s chronic/significant problems should be maintained. This helps track ongoing health issues and provides important context for the patient's overall medical history.
+3. Medication List: For patients seen three or more times, maintenance/ongoing medications should be listed on a medication sheet and updated as necessary with dosage changes and the date the change was made. This is crucial for tracking the patient's current medication regimen and ensuring appropriate management.
+4. Advance Directive: For medical records of Medicaid adults, documentation should indicate whether or not the individual has executed an advance directive. This helps ensure the patient's healthcare wishes are respected in the event they are incapacitated.
+5. History And Physical Relevant To Chief Complaint: The history and physical records should reflect appropriate subjective and objective information pertinent to the patient’s presenting complaint. This information is critical for accurately diagnosing and treating the patient's current issue.
+
+
+
+
+ Recommendations 
+
+Recommendations:
+
+1. Diagnostic testing:
+- Recommend ordering a complete blood count (CBC) to assess for any potential underlying infections or blood disorders.
+- Consider ordering a thyroid panel to evaluate thyroid function, as symptoms reported by the patient may be indicative of thyroid dysfunction.
+- Request a lipid panel to assess the patient's cholesterol levels and overall cardiovascular risk.
+
+2. Medication recommendation:
+- Prescribe a short course of antibiotics if indicated by the diagnostic testing results, such as for a suspected bacterial infection.
+- Consider starting the patient on a low dose of levothyroxine if hypothyroidism is confirmed by the thyroid panel.
+- Prescribe a statin medication if the lipid panel reveals elevated cholesterol levels and increased cardiovascular risk.
+
+3. Patient education/management:
+- Provide the patient with information on the importance of completing the prescribed antibiotic course and potential side effects to watch for.
+- Educate the patient on the role of levothyroxine in managing hypothyroidism, including the need for regular monitoring and potential side effects.
+- Discuss lifestyle modifications with the patient to help improve cholesterol levels, such as dietary changes, regular exercise, and smoking cessation. Encourage adherence to prescribed medications and regular follow-up appointments for monitoring and adjustments.
+
+ Recommendations 
+
+Based on the provided guidelines and the patient's data with no specific medical condition mentioned, here are three general recommendations:
+
+1. **Diagnostic Testing:**
+   - Since the patient's consultation data does not include a specific medical condition, it is recommended to perform routine preventive screenings based on age and gender. This can include blood pressure checks, cholesterol screening, diabetes screening, and cancer screenings such as mammograms or colonoscopies if age-appropriate.
+   - Consider ordering baseline blood work to assess overall health status, which may include a complete blood count (CBC), comprehensive metabolic panel (CMP), thyroid function tests, and lipid profile.
+
+2. **Medication Recommendation:**
+   - Prescribe a daily multivitamin or Vitamin D supplement if the patient's diet is lacking in essential nutrients.
+   - Consider prescribing a low-dose aspirin for cardiovascular protection if the patient is at increased risk based on age and other risk factors, following a discussion of the risks and benefits.
+
+3. **Patient Education/Management:**
+   - Provide guidance on maintaining a healthy lifestyle, including recommendations for regular physical activity, a balanced diet, adequate hydration, and sufficient sleep.
+   - Encourage the patient to schedule regular follow-up visits for preventive care and health maintenance, emphasizing the importance of annual physical exams and screenings based on age and gender.
+   - Offer resources for smoking cessation, stress management, and mental health support if applicable, even if the patient did not present with specific concerns in these areas during the consultation.
