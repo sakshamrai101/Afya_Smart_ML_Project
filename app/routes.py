@@ -16,13 +16,13 @@ from config import Config
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the file path to data.csv
 db_file_path = os.path.join(current_dir, 'data_econsult', 'database.db')
-pneumonia_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'pneumonia_econsult_data.txt')
-boneFracture_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'boneFracture_econsult_data.txt')
-oral_Surgery_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'oral_Surgery_econsult_data.txt')
+pneumonia_file_path = os.path.join(current_dir, 'data_econsult', 'pneumonia.txt')
+bone_fracture_file_path = os.path.join(current_dir, 'data_econsult', 'bone_fracture.txt')
+oral_surgery_file_path = os.path.join(current_dir, 'data_econsult', 'oral_surgery.txt')
 
-updated_file_path = os.path.join(current_dir, 'data_econsult', 'pneumonia_updated_econsult_data.txt')
-file_content = read_file(pneumonia_econsult_file_path)
-shutil.copyfile(pneumonia_econsult_file_path, updated_file_path)
+updated_file_path = os.path.join(current_dir, 'data_econsult', 'pneumonia_updated.txt')
+file_content = read_file(pneumonia_file_path)
+shutil.copyfile(pneumonia_file_path, updated_file_path)
 account_sid = Config.ACCOUNT_SID
 auth_token = Config.AUTH_TOKEN
 twilio_number = Config.TWILIO_NUMBER
