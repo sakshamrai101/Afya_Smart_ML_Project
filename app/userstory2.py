@@ -31,13 +31,12 @@ def generate_targeted_questions(econsult_data, guidelines_text):
 
     questions = completion.choices[0].message.content.strip()
     return questions
-def main(econsult_data):
+def targeted_conversations(econsult_data):
     
-
+    print('user input for targeted questions:', econsult_data)
     # Generate targeted questions based on the eConsult data
     targeted_questions = generate_targeted_questions(econsult_data, guidelines_text)
     return targeted_questions
 
-if __name__ == "__main__":
-    main()
+
 
