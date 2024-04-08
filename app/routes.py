@@ -71,17 +71,6 @@ def import_page():
     else:
         return redirect(url_for('index'))
 
-# @app.route('/view_boneFracture_file', methods=['GET'])
-# def view_boneFracture_file():
-#     return send_file(boneFracture_econsult_file_path)
-
-# @app.route('/view_oralSurgery_file', methods=['GET'])
-# def view_oralSurgery_file():
-#     return send_file(oral_Surgery_econsult_file_path)
-
-# @app.route('/view_pneumonia_file', methods=['GET'])
-# def view_pneumonia_file():
-#     return send_file(pneumonia_econsult_file_path)
    
 @app.route('/operation3', methods=['GET','POST'])
 def operation3():
@@ -105,14 +94,14 @@ def operation1():
 def missing_info():
     
     missing_info_list = conversation_loop(file_content)
-    add_content(updated_file_path, "\n Missing list \n")
+    add_content(eConsult_file_path, "\n Missing list \n")
 
     # Convert missing_info_list to a formatted string
     formatted_message = "\n".join([f"{item['number']}. {item['info']}" for item in missing_info_list])
-    add_content(updated_file_path, formatted_message)
-    add_content(updated_file_path, '\n')
+    add_content(eConsult_file_path, formatted_message)
+    add_content(eConsult_file_path, '\n')
     notes = request.form.get('notes', '')
-    add_content(updated_file_path, notes)
+    add_content(eConsult_file_path, notes)
     # Setup for sending notifications to PCP upon generating missing info checklist.
     client = Client(account_sid, auth_token)
 
@@ -135,8 +124,8 @@ def targeted_questions():
 def recommendations():
 
     reco = recommendations_conversation_loop(file_content)
-    add_content(updated_file_path, '\n Recommendations \n')
-    add_content(updated_file_path, reco)
+    add_content(eConsult_file_path, '\n Recommendations \n')
+    add_content(eConsult_file_path, reco)
     reco = '<br>'.join(reco.split('\n'))
     return render_template('recommendations.html', reco=reco)
 
