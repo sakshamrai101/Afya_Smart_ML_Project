@@ -39,3 +39,21 @@ Assessment and Plan:
 3. Prescribe albuterol inhaler for bronchodilation
 4. Advise bed rest and adequate fluid intake
 5. Follow up in 3 days for reassessment
+
+ Recommendations 
+
+Recommendations:
+1. Diagnostic Testing: 
+- Chest X-ray to confirm pneumonia diagnosis, given the symptoms of shortness of breath, cough, and fever with chest pain.
+- Complete blood count (CBC) with differential to assess for any signs of infection.
+- Pulse oximetry to monitor oxygen saturation levels, especially with decreased breath sounds on exam.
+
+2. Medication Recommendation:
+- Prescribe antibiotics such as azithromycin or levofloxacin for empirical treatment of community-acquired pneumonia.
+- Continue Lisinopril and Atorvastatin for hypertension and hyperlipidemia management, respectively.
+- Prescribe albuterol inhaler for bronchodilation to help with breathing difficulties.
+
+3. Patient Education/Management:
+- Advise Mr. Smith to rest and stay hydrated to allow his body to recover from the infection.
+- Educate on the importance of completing the full course of antibiotics as prescribed to ensure resolution of pneumonia.
+- Encourage follow-up in 3 days for reassessment to monitor response to treatment and adjust management as needed.
