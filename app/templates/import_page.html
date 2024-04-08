@@ -257,18 +257,12 @@
             
             // Add the "View" button to the same container
             var viewButtonContainer = document.getElementById("pneumoniaButtonViewContainer");
-            var viewForm = document.createElement("form");
-            viewForm.id = "viewPneumoniaForm";
-            viewForm.action = "/view_pneumonia_file"; // Set the form action to the appropriate URL
-            viewForm.method = "get";
-
             var viewButton = document.createElement("button");
             viewButton.className = "btn btn-outline-secondary custom-button float-right";
             viewButton.type = "submit";
             viewButton.textContent = "View";
-
-            viewForm.appendChild(viewButton)
-            viewButtonContainer.appendChild(viewForm);
+            viewButton.onclick = viewFile;
+            viewButtonContainer.appendChild(viewButton);
 
             localStorage.setItem('buttonAdded', 'true');
         }
