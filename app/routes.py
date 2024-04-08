@@ -130,3 +130,15 @@ def recommendations():
 @app.route('/operation4')
 def operation4():
     return render_template('operation4.html')
+
+@app.route('/view_bone_fracture')
+def view_bone_fracture():
+    # Assuming the 'bone_fracture.txt' file is in the 'data' directory
+    file_path = 'data_econsult/bone_fracture.txt'
+    return send_file(file_path, as_attachment=False)
+
+@app.route('/view_oral_surgery')
+def view_oral_surgery():
+    # Assuming the 'bone_fracture.txt' file is in the 'data' directory
+    file_path = 'data_econsult/oral_surgery.txt'
+    return send_file(file_path, as_attachment=False)
