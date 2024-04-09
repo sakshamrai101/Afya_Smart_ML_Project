@@ -4,6 +4,7 @@ import sys
 import openai
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import Config
+
 openai.api_key=Config.OPENAI_API_KEY
 # os.environ["OPENAI_API_KEY"] = "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"
 

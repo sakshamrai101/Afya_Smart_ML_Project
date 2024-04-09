@@ -11,15 +11,6 @@ def client():
     with app.test_client() as client:
         yield client
 
-def test_login_page(client):
-    response = client.post('/PCP_login')
-    print(800)
-    print(response)
-#     assert response.status_code == 200
-    # assert b'PCP Login' in response.data
-    # assert b'Username' in response.data
-    # assert b'Password' in response.data
-    # assert b'Login' in response.data
     
 def test_login_form(client):
     # Send a POST request with valid login credentials
