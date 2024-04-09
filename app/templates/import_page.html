@@ -138,7 +138,7 @@
     
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="form-inline my-2 my-lg-0 ml-auto" id="logoutForm" action="/logout" method="post">
-                    <button class="btn btn-outline-secondary custom-button my-2 my-sm-0" type="submit">Logout</button>
+                    <button class="btn btn-outline-secondary custom-button my-2 my-sm-0" type="submit" onclick="logout()">Logout</button>
                 </form>
             </div>
         </nav>
@@ -169,11 +169,13 @@
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
                 <div class="row">
-                    <div class="col" id="pneumoniaButtonContainer">
-                       
+                    <div class="col" id="importdataButtonContainer">
+                        <form id="dataForm" action="/operation1" method="post">
+                            <button id='econsultData'class="btn btn-outline-secondary custom-button" type="submit" disabled>None</button>
+                        </form>
                     </div>
-                    <div class="col" id="pneumoniaButtonViewContainer">
-                      
+                    <div class="col" id="importdataButtonViewContainer">
+                        <button class="btn btn-outline-secondary custom-button float-right" id="econsultData_view" type="submit" onclick="viewFile()" disabled>View</button>
                     </div>
                 </div>
                
@@ -209,18 +211,12 @@
             document.getElementById('loadingOverlay').style.display = 'flex';
 
             setTimeout(() => {
-                // Check if the button has already been added
-                var buttonAdded = localStorage.getItem('buttonAdded');
-                if (!buttonAdded) {
-                    // If the button has not been added, add it
-                    addPneumoniaButton();
-                    // Set the flag in session storage indicating that the button has been added
-                    localStorage.setItem('buttonAdded', 'true');
-                }
 
                 var fileInput = document.getElementById('inputGroupFile04');
                 var file = fileInput.files[0];
                 var reader = new FileReader();
+                // Extract the file name without the extension
+                var fileName = file.name.replace(/\.[^/.]+$/, "");
                 reader.onload = function(event) {
             
                     var fileContent = event.target.result;
@@ -230,6 +226,14 @@
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState == 4 && xhr.status == 200) {
                             console.log("File content sent to server successfully");
+                           
+                            document.getElementById('econsultData').disabled = false;
+                            document.getElementById('econsultData').textContent = fileName;
+                            document.getElementById('econsultData_view').disabled = false;
+
+                            // Store a flag indicating that the file has been uploaded
+                            localStorage.setItem('fileUploaded', 'true');
+                            localStorage.setItem('fileName', fileName);
                         }
                     };
                     xhr.send(JSON.stringify({ "fileContent": fileContent }));
@@ -241,49 +245,24 @@
                 document.getElementById('loadingOverlay').style.display = 'none';
             }, 1000);
 
-            // Remove the 'buttonAdded' flag from localStorage when the page is refreshed
-            window.addEventListener('beforeunload', function() {
-                localStorage.removeItem('buttonAdded');
-            });
-         }
-
-
-        function addPneumoniaButton() {
-            var container = document.getElementById('pneumoniaButtonContainer');
-            var input = document.getElementById('inputGroupFile04');
-            var fileName = input.files[0].name;
             
-            // Extract the file name without the extension
-            var fileNameWithoutExtension = fileName.replace(/\.[^/.]+$/, "");
 
-            // Create a form element with the desired id
-            var newForm = document.createElement("form");
-            newForm.id = "pneumoniaForm";
-            newForm.action = "/operation1"; // Set the form action to the appropriate URL
-            newForm.method = "post";
-
-            // Add the "Pneumonia" button
-            var newButton = document.createElement("button");
-            newButton.className = "btn btn-outline-secondary custom-button";
-            newButton.type = "submit";
-            newButton.textContent = fileNameWithoutExtension;
-
-            newForm.appendChild(newButton);
-            container.appendChild(newForm);
-
-
-            
-            // Add the "View" button to the same container
-            var viewButtonContainer = document.getElementById("pneumoniaButtonViewContainer");
-            var viewButton = document.createElement("button");
-            viewButton.className = "btn btn-outline-secondary custom-button float-right";
-            viewButton.type = "submit";
-            viewButton.textContent = "View";
-            viewButton.onclick = viewFile;
-            viewButtonContainer.appendChild(viewButton);
-
-            localStorage.setItem('buttonAdded', 'true');
         }
+
+         // Check if the file has been uploaded
+        window.onload = function() {
+            
+            var fileUploaded = localStorage.getItem('fileUploaded');
+            if (fileUploaded === 'true') {
+                var fileName = localStorage.getItem('fileName');
+                document.getElementById('econsultData').disabled = false;
+                document.getElementById('econsultData').textContent = fileName;
+                document.getElementById('econsultData_view').disabled = false;
+            }else{
+                document.getElementById('econsultData').textContent = "None";
+            }
+        };
+
 
 
         
@@ -298,14 +277,6 @@
             document.getElementById('uploadButton').disabled = false;
         }
 
-        // function viewFile() {
-        //     var uploadedFile = localStorage.getItem('uploadedFile');
-        //     if (uploadedFile) {
-        //         var blob = new Blob([uploadedFile], { type: 'text/plain' });
-        //         var url = URL.createObjectURL(blob);
-        //         window.open(url, '_blank');
-        //     }
-        // }  
         function viewFile() {
             fetch('/view_file_content')
                 .then(response => {
@@ -367,6 +338,13 @@
                     console.error('Error:', error);
                 });
         }
+
+        function logout() {
+            // Clear the localStorage flag
+            localStorage.removeItem('fileUploaded');
+            localStorage.removeItem('fileName');
+        }
+
 
 
 

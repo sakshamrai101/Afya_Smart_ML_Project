@@ -1,51 +1,39 @@
-Patient Name: John Smith
-Date of Visit: 03/25/2023
-Chief Complaint: Shortness of breath and cough
-
+Patient Name: Michael Brown
+Date of Birth: 03/18/1978
+Date of Visit: 07/15/2023
+Chief Complaint: Lower back pain
 
 History of Present Illness:
-Mr. Smith presents today with complaints of shortness of breath and cough with yellow-green sputum production for the past week. He reports a fever of 101°F and chest pain that worsens with deep breathing or coughing.
+Mr. Brown presents today with complaints of lower back pain that started a week ago after lifting heavy furniture. He describes the pain as dull and achy, radiating down his left leg. He reports no numbness or tingling in his legs.
 
+Past Medical History:
+- Degenerative disc disease
 
-- Hypertension
-- Hyperlipidemia
--
+Medications:
+- Naproxen 500mg twice daily as needed for pain
 
-
-- Lisinopril 10mg daily
-- Atorvastatin 20mg daily
--
-
-
-- Father: Hypertension
-- Mother: Hyperlipidemia
--
-
-
+Social History:
 - Non-smoker
-- Rare alcohol use
--
-
+- Occasional alcohol use
 
 Physical Exam:
-- General: Appears ill, in moderate distress
-- Vital Signs: BP 140/90, HR 100, RR 24, Temp 101°F
-- Respiratory: Decreased breath sounds and crackles on the right lower lung field
-
+- General: Appears uncomfortable due to pain
+- Vital Signs: BP 120/80, HR 80, RR 16, Temp 98.6°F
+- Musculoskeletal: Decreased range of motion and tenderness over the lumbar spine, positive straight leg raise test on the left
 
 Assessment and Plan:
-1. Confirm diagnosis with chest X-ray
-2. Start empirical antibiotic therapy for community-acquired pneumonia
-3. Prescribe albuterol inhaler for bronchodilation
-4. Advise bed rest and adequate fluid intake
-5. Follow up in 3 days for reassessment
+1. Order lumbar spine X-ray
+2. Prescribe muscle relaxants for pain relief
+3. Refer to physical therapy for strengthening exercises
+4. Schedule follow-up appointment in 2 weeks for reevaluation
+
 
  Missing list 
 
-1. **Personal Data**: The patient's age, sex, address, employer, and contact numbers should be documented in the medical record.
-2. **Allergies**: There is no mention of any medication allergies or history of adverse reactions which should be prominently noted in the record.
-3. **Problem List**: A separate list of the patient's chronic or significant problems should be maintained, which is not present in the provided information.
-4. **Medication List**: An updated list of ongoing medications should be present with dosage changes and dates of changes, which is missing.
-5. **Past Medical History**: There is no information provided regarding the patient's past medical history, including any serious accidents, operations, or illnesses.
+1. **Personal Data**: The patient's address, employer, home and work telephone numbers, and marital status are missing.
+2. **Allergies**: There is no mention of any medication allergies or adverse reactions, which should be prominently noted in the record.
+3. **Problem List**: While the patient's degenerative disc disease is mentioned in the past medical history, a separate list of chronic/significant problems should be maintained for patients seen three or more times.
+4. **Advance Directive**: There is no documentation regarding whether or not the patient has executed an advance directive, which is required for Medicaid adults aged 18 and older.
+5. **Author Signature**: There is no signature by the author/performing provider on the assessment and plan, as per the documentation guidelines.
 
 
