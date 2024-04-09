@@ -1,7 +1,7 @@
 import sqlite3
 
 # Connect to SQLite database
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('database_specialists.db')
 cursor = conn.cursor()
 
 # Create users table
@@ -10,17 +10,19 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS users (
                     username TEXT NOT NULL,
                     password TEXT NOT NULL
                   )''')
-name_list = ['Aaliyah Livingston',
-            'Ayla Taylor',
-            'Romeo Morgan',
-            'Susannah Zimmerman',
-            'Aaryan Reese']
+name_list = [
+            'Keaton Gaines',
+            'Faizan Morrison',
+            'Alessia Blanchard',
+            'Lily-Mae Houston',
+            'Isaac Sparks']
 
-password_list = ['Ay&PHJYpTb+6',
-                 'N17SLT*E?qhw',
-                 'ExIn%S7x*8R,',
-                 'O0XqQB_JB?I3',
-                 'n?ktZStD?GM2'
+password_list = [
+                 '7m&yW3bT95%H',
+                 '?18SEWtM8E;X',
+                 'u!ZQJYH&.878',
+                 'Z&.1N_:%S6!,',
+                 '16HA&;?7PGtU'
                 ]
                          
 # Insert sample data

@@ -1,51 +1,79 @@
-Patient Name: John Smith
-Date of Visit: 03/25/2023
-Chief Complaint: Shortness of breath and cough
-
+Patient Name: Sarah Johnson
+Date of Birth: 05/15/1980
+Date of Visit: 04/10/2023
+Chief Complaint: Left leg pain and swelling
 
 History of Present Illness:
-Mr. Smith presents today with complaints of shortness of breath and cough with yellow-green sputum production for the past week. He reports a fever of 101°F and chest pain that worsens with deep breathing or coughing.
+Ms. Johnson presents today with complaints of left leg pain and swelling following a fall while hiking yesterday. She reports difficulty bearing weight on the left leg and significant bruising around the knee.
 
+Past Medical History:
+- None
 
-- Hypertension
-- Hyperlipidemia
--
+Medications:
+- None
 
-
-- Lisinopril 10mg daily
-- Atorvastatin 20mg daily
--
-
-
+Family History:
 - Father: Hypertension
 - Mother: Hyperlipidemia
--
 
-
+Social History:
 - Non-smoker
-- Rare alcohol use
--
-
+- Occasional alcohol use
 
 Physical Exam:
-- General: Appears ill, in moderate distress
-- Vital Signs: BP 140/90, HR 100, RR 24, Temp 101°F
-- Respiratory: Decreased breath sounds and crackles on the right lower lung field
-
+- Left leg: Obvious deformity and tenderness over the left knee, limited range of motion
+- Vital Signs: BP 120/80, HR 80, RR 16, Temp 98.6°F
 
 Assessment and Plan:
-1. Confirm diagnosis with chest X-ray
-2. Start empirical antibiotic therapy for community-acquired pneumonia
-3. Prescribe albuterol inhaler for bronchodilation
-4. Advise bed rest and adequate fluid intake
-5. Follow up in 3 days for reassessment
+1. Confirm diagnosis with X-ray
+2. Immobilize the left leg with a splint
+3. Prescribe pain medication and advise rest
+4. Schedule follow-up appointment in 1 week for reassessment
+
 
  Missing list 
 
-1. **Personal Data**: The patient's age, sex, address, employer, and contact numbers should be documented in the medical record.
-2. **Allergies**: There is no mention of any medication allergies or history of adverse reactions which should be prominently noted in the record.
-3. **Problem List**: A separate list of the patient's chronic or significant problems should be maintained, which is not present in the provided information.
-4. **Medication List**: An updated list of ongoing medications should be present with dosage changes and dates of changes, which is missing.
-5. **Past Medical History**: There is no information provided regarding the patient's past medical history, including any serious accidents, operations, or illnesses.
+1. **Personal Data:** Both patient consult data lack information such as address, employer, and emergency contacts which are typically required in the medical record as per guidelines.
+2. **Allergies:** There is no information about the patient's medication allergies or history of adverse reactions in either case, which should be prominently noted as per guidelines.
+3. **Past Medical History:** Both patients have a lack of any past medical history documented, which is essential for continuity of care and should be easily identified for patients seen three or more times.
+4. **Medications List:** In both cases, there is missing information on any current medications the patients may be taking, including maintenance/ongoing medications, as per the guidelines.
+5. **Advance Directive:** There is no documentation regarding whether the individuals have executed an advance directive, which is required for medical records of Medicaid adults aged 18 and older as per the guidelines.
 
 
+
+
+ Recommendations 
+
+Based on the standard guidelines and the patient's consult data, here are 3 recommendations for diagnostic testing, medication recommendation, and patient education/management:
+
+1. Diagnostic Testing:
+- Recommend ordering a complete blood count (CBC) to assess for any potential underlying infections or blood disorders that may be contributing to the patient's symptoms.
+- Consider ordering a thyroid panel to rule out any thyroid abnormalities that could be impacting the patient's overall health and well-being.
+- Suggest conducting a lipid panel test to evaluate the patient's cholesterol levels and assess their risk for cardiovascular disease.
+
+2. Medication Recommendation:
+- Based on the patient's presentation and potential diagnostic findings, consider prescribing a trial of an antihistamine medication to help alleviate any allergy symptoms the patient may be experiencing.
+- If the patient's symptoms suggest possible thyroid dysfunction, consider starting them on thyroid medication to help regulate their thyroid hormone levels.
+- If the lipid panel results show elevated cholesterol levels, discuss initiating a statin medication to help lower cholesterol and reduce the risk of cardiovascular disease.
+
+3. Patient Education/Management:
+- Provide the patient with information on the importance of maintaining a healthy diet and regular exercise to help manage any underlying health conditions and improve overall well-being.
+- Recommend scheduling regular follow-up visits to monitor the effectiveness of any prescribed medications and to address any concerns or changes in symptoms.
+- Encourage the patient to keep a record of any changes in symptoms or side effects from medications to discuss at their follow-up appointments and to track their progress.
+
+ Targeted questions 
+
+
+ Targeted questions 
+
+Based on the provided guidelines and the absence of specific patient data, here are some targeted questions for the PCP to review and send over to the specialist for further diagnosis:
+
+1. Can you provide a detailed assessment and management plan for the patient's unresolved medical issues from previous visits?
+ 
+2. Could you review and provide recommendations on the appropriate studies ordered in relation to the patient's current diagnosis and treatment plan?
+
+3. Please evaluate and provide your expertise on the appropriateness of the current treatment plan based on the patient's chief complaint and physical exam findings.
+
+4. Can you review the patient's medical history and provide guidance on any potential socioenvironmental factors such as abuse/neglect that may impact their overall health and well-being? 
+
+These questions will help the specialist gain a better understanding of the patient's history and current condition, allowing for a more comprehensive and targeted assessment and treatment plan.

@@ -1,51 +1,62 @@
-Patient Name: John Smith
-Date of Visit: 03/25/2023
-Chief Complaint: Shortness of breath and cough
-
+Patient Name: Sarah Johnson
+Date of Birth: 05/15/1980
+Date of Visit: 04/10/2023
+Chief Complaint: Left leg pain and swelling
 
 History of Present Illness:
-Mr. Smith presents today with complaints of shortness of breath and cough with yellow-green sputum production for the past week. He reports a fever of 101°F and chest pain that worsens with deep breathing or coughing.
+Ms. Johnson presents today with complaints of left leg pain and swelling following a fall while hiking yesterday. She reports difficulty bearing weight on the left leg and significant bruising around the knee.
 
+Past Medical History:
+- None
 
-- Hypertension
-- Hyperlipidemia
--
+Medications:
+- None
 
-
-- Lisinopril 10mg daily
-- Atorvastatin 20mg daily
--
-
-
+Family History:
 - Father: Hypertension
 - Mother: Hyperlipidemia
--
 
-
+Social History:
 - Non-smoker
-- Rare alcohol use
--
-
+- Occasional alcohol use
 
 Physical Exam:
-- General: Appears ill, in moderate distress
-- Vital Signs: BP 140/90, HR 100, RR 24, Temp 101°F
-- Respiratory: Decreased breath sounds and crackles on the right lower lung field
-
+- Left leg: Obvious deformity and tenderness over the left knee, limited range of motion
+- Vital Signs: BP 120/80, HR 80, RR 16, Temp 98.6°F
 
 Assessment and Plan:
-1. Confirm diagnosis with chest X-ray
-2. Start empirical antibiotic therapy for community-acquired pneumonia
-3. Prescribe albuterol inhaler for bronchodilation
-4. Advise bed rest and adequate fluid intake
-5. Follow up in 3 days for reassessment
+1. Confirm diagnosis with X-ray
+2. Immobilize the left leg with a splint
+3. Prescribe pain medication and advise rest
+4. Schedule follow-up appointment in 1 week for reassessment
+
 
  Missing list 
 
-1. **Personal Data**: The patient's age, sex, address, employer, and contact numbers should be documented in the medical record.
-2. **Allergies**: There is no mention of any medication allergies or history of adverse reactions which should be prominently noted in the record.
-3. **Problem List**: A separate list of the patient's chronic or significant problems should be maintained, which is not present in the provided information.
-4. **Medication List**: An updated list of ongoing medications should be present with dosage changes and dates of changes, which is missing.
-5. **Past Medical History**: There is no information provided regarding the patient's past medical history, including any serious accidents, operations, or illnesses.
+1. Allergies: There is no mention of any medication allergies or adverse reactions in the patient's data. This information is important for ensuring the safety of any prescribed medications.
+2. Personal Data: While the patient's date of birth is provided, there is missing information such as address, employer, and emergency contacts. This information is important for contacting the patient in case of emergency or for follow-up purposes.
+3. Past Medical History: The patient's past medical history is listed as "None" in the data provided. It is important to have a detailed past medical history including serious accidents, operations, and illnesses to provide comprehensive care.
+4. Medication List: The patient's medication list is noted as "None" in the data. It is important to document any current medications, even if the patient is not currently taking any, to have a complete picture of their medical history.
+5. Advance Directive: There is no mention of whether the patient has executed an advance directive in the provided data. This information is important for understanding the patient's preferences for medical care in case they are incapacitated.
 
 
+
+
+ Recommendations 
+
+Recommendations:
+
+Diagnostic Testing:
+1. X-ray of the left knee to confirm the diagnosis of a possible fracture in the left leg.
+2. Doppler ultrasound to rule out deep vein thrombosis (DVT) given the patient's complaints of leg pain and swelling.
+3. Complete blood count (CBC) to rule out any signs of infection or abnormality in the blood related to the injury.
+
+Medication Recommendation:
+1. Prescribe nonsteroidal anti-inflammatory drugs (NSAIDs) such as ibuprofen for pain relief and to reduce inflammation.
+2. Consider prescribing acetaminophen for additional pain control if NSAIDs are not sufficient.
+3. Provide information on the proper use of prescribed medications, including dosage, frequency, and potential side effects.
+
+Patient Education/Management:
+1. Educate the patient on the importance of rest, elevation, and ice therapy to reduce pain and swelling in the affected leg.
+2. Instruct the patient to avoid putting weight on the injured leg and to use crutches as needed for mobility.
+3. Emphasize the importance of attending the follow-up appointment in 1 week for reassessment and to discuss any concerns or changes in symptoms.

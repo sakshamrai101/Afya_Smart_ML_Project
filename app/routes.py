@@ -16,6 +16,7 @@ global eConsult_file_path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the file path to data.csv
 db_file_path = os.path.join(current_dir, 'data_econsult', 'database.db')
+specialist_db_file_path = os.path.join(current_dir, 'data_econsult', 'database_specialists.db')
 eConsult_file_path = os.path.join(current_dir, 'data_econsult', 'eConsult.txt')
 boneFracture_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'boneFracture_econsult_data.txt')
 oral_Surgery_econsult_file_path = os.path.join(current_dir, 'data_econsult', 'oral_Surgery_econsult_data.txt')
@@ -49,12 +50,46 @@ def view_file_content():
     return jsonify({'fileContent': file_content})
 
 # Route to handle user login
-@app.route('/', methods=["GET"])
-def index():
-    return render_template('index.html')
+# @app.route('/', methods=["GET"])
+# def welcome():
+#     return render_template('welcome.html')
+
+# @app.route('/index')
+# def PCP():
+#     return redirect(url_for('index'))
+
+# @app.route('/welcome')
+# def specialist():
+#     return redirect(url_for('specialist_login'))
+
+@app.route('/', methods=["GET", "POST"])
+def welcome():
+    if request.method == "POST":
+        # Determine which form was submitted and redirect accordingly
+        if request.form.get('form1'):
+            return redirect(url_for('PCP'))
+        elif request.form.get('form2'):
+            return redirect(url_for('specialist'))
+    # If it's a GET request or form submission didn't happen, render the welcome page
+    return render_template('welcome.html')
+
+@app.route('/index', methods=["GET", "POST"])
+def PCP():
+    if request.method == "POST":
+        # Handle form submission if needed
+        pass
+    return render_template('index.html')  # Render PCP login page
+
+@app.route('/welcome', methods=["GET", "POST"])
+def specialist():
+    if request.method == "POST":
+        # Handle form submission if needed
+        pass
+    return render_template('specialist_login.html')  # Render specialist login page
+
 
 @app.route('/PCP_login', methods=['POST'])
-def login():
+def PCP_login():
     username = request.form['username']
     password = request.form['password']
 
@@ -67,6 +102,24 @@ def login():
     if user:
         session['username'] = username
         return redirect(url_for('import_page'))
+    else:
+        flash('Invalid username or password', 'error')
+        return redirect(url_for('index'))
+
+@app.route('/Specialist_login', methods=['POST'])
+def specialist_login():
+    username = request.form['username']
+    password = request.form['password']
+
+    conn = sqlite3.connect(specialist_db_file_path)
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
+    user = cursor.fetchone()
+    print('user:', user)
+    if user:
+        session['username'] = username
+        return redirect(url_for('import_page_specialist'))
     else:
         flash('Invalid username or password', 'error')
         return redirect(url_for('index'))
@@ -92,7 +145,7 @@ def operation2():
 @app.route('/logout', methods=['POST'])
 def logout():
     session.pop('username', None)
-    return redirect(url_for('index'))
+    return redirect(url_for('welcome'))
 
 @app.route('/operation1', methods=['GET','POST'])
 def operation1():
@@ -125,7 +178,10 @@ def missing_info():
 @app.route('/Targeted_questions', methods=['POST'])
 def targeted_questions():
     targeted_questions_list = targeted_conversations(file_content)
+    # add_content(eConsult_file_path, "\n Targeted questions \n")
+    # add_content(eConsult_file_path, targeted_questions_list)
     questions_to_display = targeted_questions_list.split('\n') 
+
     return render_template('targeted_questions.html', questions=questions_to_display)
 
 @app.route('/Recommendations', methods=['POST'])
