@@ -1,7 +1,7 @@
 # Afya Smart_ML Project
 
 ## Overview
-The Afya Smart_ML Project is designed to optimize the e-consultation process for Primary Care Providers (PCPs) on the AfyaChat platform, leveraging GPT-3.5 Turbo for AI-driven insights. We streamline consultations, enhance the accuracy of medical advice, and ensure compliance with best-practice guidelines.
+The Afya Smart_ML Project is designed to optimize the e-consultation process for Primary Care Providers (PCPs) on the AfyaChat platform, leveraging GPT-3.5 Turbo for AI-driven insights. We streamline consultations, augment them for comprehensive submissions to specialists, and ensure compliance with best-practice guidelines.
 
 ## Getting Started
 To begin using the Smart_ML application for enhancing e-consultations, just do:
