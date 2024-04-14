@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Smart ML{% endblock %}
+
+{% block content %}
+    <!-- Your HTML content for the operations page goes here -->
+    <div class="background">
+        <div class="container">
+            <h2>Welcome to Smart ML</h2>
+            <div class="row">
+                <div class="col">
+                    <form id="form1" action="/index" method="post">
+                        <button class="btn-orange" type="button" onclick="submitForm('form1')">PCP Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-2"></div> <!-- Add margin between rows -->
+            <div class="row">
+                <div class="col">
+                    <form id="form2" action="/welcome"  method="post">
+                        <button class="btn-orange" type="button" onclick="submitForm('form2')">Specialist Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Function to submit the form based on formId
+    function submitForm(formId) {
+        document.getElementById(formId).submit();
+    }
+</script>
+    
+
+<!-- Custom styles for the buttons -->
+<style>
+    .background {
+        background-image: url('../static/images/bg.jpeg');
+        background-size: cover; /* Cover the entire container */
+        background-position: center; /* Center the background image */
+        height: 100vh; /* Set the background container height to the viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-orange {
+        display: block;
+        margin: 20px auto; /* Add margin to separate buttons */
+        font-size: 24px;
+        padding: 15px 30px;
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+
+
+{% endblock %}

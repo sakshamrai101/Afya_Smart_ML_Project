@@ -51,7 +51,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 500px;
-            height: 500px;
+            height: 600px;
             margin: 10px;
             display: flex;
             flex-direction: column;
@@ -62,14 +62,24 @@
             padding: 20px;
             border: 2px solid black;
             border-radius: 8px;
-            height: 220px;
+            height: 270px;
         }
 
         .card-bottom {
             padding: 20px;
             border: 2px solid black;
             border-radius: 8px;
-            height: 220px;
+            height: 270px;
+        }
+
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border: 2px solid black;
+            border-radius: 8px;
         }
 
         h5 {
@@ -119,20 +129,31 @@
 
 <body>
     <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">SmartML - Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form-inline my-2 my-lg-0 ml-auto" id="logoutForm" action="/logout" method="post">
+                    <button class="btn btn-outline-secondary custom-button my-2 my-sm-0" type="submit" onclick="logout()">Logout</button>
+                </form>
+            </div>
+        </nav>
         <div class="card">
             <div class="card-top">
-                <h5>Welcome, {{ username }}</h5>
+                <h5>Welcome, Dr. {{ username }}</h5>
                 <h5>Reference E-consult Data</h5>
                 <div class="row">
                     <div class="col">
                         <form id="boneFractureForm" action="/operation3" method="post">
-                            <button class="btn btn-outline-secondary custom-button" type="submit">Bone Fracture</button>
+                            <button class="btn btn-outline-secondary custom-button" type="submit" onclick="">Bone Fracture</button>
                         </form>
                     </div>
                     <div class="col">
-                        <form id="viewBoneFractureForm" action="/view_boneFracture_file" method="get">
-                            <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
-                        </form>
+                        <button class="btn btn-outline-secondary custom-button float-right" type="submit" onclick="viewBoneFracture()">View</button>
                     </div>
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
@@ -143,18 +164,18 @@
                         </form>
                     </div>
                     <div class="col">
-                        <form id="viewOralSurgeryForm" action="/view_oralSurgery_file" method="get">
-                            <button class="btn btn-outline-secondary custom-button float-right" type="submit">View</button>
-                        </form>
+                        <button class="btn btn-outline-secondary custom-button float-right" type="submit" onclick="viewOralSurgery()">View</button>
                     </div>
                 </div>
                 <div class="mt-2"></div> <!-- Add margin between rows -->
                 <div class="row">
-                    <div class="col" id="pneumoniaButtonContainer">
-                       
+                    <div class="col" id="importdataButtonContainer">
+                        <form id="dataForm" action="/operation1" method="post">
+                            <button id='econsultData'class="btn btn-outline-secondary custom-button" type="submit" disabled>None</button>
+                        </form>
                     </div>
-                    <div class="col" id="pneumoniaButtonViewContainer">
-                      
+                    <div class="col" id="importdataButtonViewContainer">
+                        <button class="btn btn-outline-secondary custom-button float-right" id="econsultData_view" type="submit" onclick="viewFile()" disabled>View</button>
                     </div>
                 </div>
                
@@ -190,74 +211,58 @@
             document.getElementById('loadingOverlay').style.display = 'flex';
 
             setTimeout(() => {
-                // Check if the button has already been added
-                var buttonAdded = localStorage.getItem('buttonAdded');
-                if (!buttonAdded) {
-                    // If the button has not been added, add it
-                    addPneumoniaButton();
-                    // Set the flag in session storage indicating that the button has been added
-                    localStorage.setItem('buttonAdded', 'true');
-                }
 
                 var fileInput = document.getElementById('inputGroupFile04');
                 var file = fileInput.files[0];
                 var reader = new FileReader();
+                // Extract the file name without the extension
+                var fileName = file.name.replace(/\.[^/.]+$/, "");
                 reader.onload = function(event) {
-                    localStorage.setItem('uploadedFile', event.target.result);
-                };
-        reader.readAsText(file);
+            
+                    var fileContent = event.target.result;
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "/store_file_content", true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            console.log("File content sent to server successfully");
+                           
+                            document.getElementById('econsultData').disabled = false;
+                            document.getElementById('econsultData').textContent = fileName;
+                            document.getElementById('econsultData_view').disabled = false;
+
+                            // Store a flag indicating that the file has been uploaded
+                            localStorage.setItem('fileUploaded', 'true');
+                            localStorage.setItem('fileName', fileName);
+                        }
+                    };
+                    xhr.send(JSON.stringify({ "fileContent": fileContent }));
+                        };
+                reader.readAsText(file);
+
+
+
                 document.getElementById('loadingOverlay').style.display = 'none';
             }, 1000);
 
-            // Remove the 'buttonAdded' flag from localStorage when the page is refreshed
-            window.addEventListener('beforeunload', function() {
-                localStorage.removeItem('buttonAdded');
-            });
-         }
-
-
-        function addPneumoniaButton() {
-            var container = document.getElementById('pneumoniaButtonContainer');
-
-            // Create a form element with the desired id
-            var newForm = document.createElement("form");
-            newForm.id = "pneumoniaForm";
-            newForm.action = "/operation1"; // Set the form action to the appropriate URL
-            newForm.method = "post";
-
-            // Add the "Pneumonia" button
-            var newButton = document.createElement("button");
-            newButton.className = "btn btn-outline-secondary custom-button";
-            newButton.type = "submit";
-            newButton.textContent = "Pneumonia";
-
-            newForm.appendChild(newButton);
-            container.appendChild(newForm);
-
-
             
-            // Add the "View" button to the same container
-            var viewButtonContainer = document.getElementById("pneumoniaButtonViewContainer");
-            var viewForm = document.createElement("form");
-            viewForm.id = "viewPneumoniaForm";
-            viewForm.action = "/view_pneumonia_file"; // Set the form action to the appropriate URL
-            viewForm.method = "get";
 
-            var viewButton = document.createElement("button");
-            viewButton.className = "btn btn-outline-secondary custom-button float-right";
-            viewButton.type = "submit";
-            viewButton.textContent = "View";
-<<<<<<< HEAD
-
-            viewForm.appendChild(viewButton)
-            viewButtonContainer.appendChild(viewForm);
-=======
-            viewButton.onclick = viewFile;
-            viewButtonContainer.appendChild(viewButton);
->>>>>>> 91d2ea9b042cc1a6f1eba492e4878c5eb9a742f0
-
-            localStorage.setItem('buttonAdded', 'true');
         }
+
+         // Check if the file has been uploaded
+        window.onload = function() {
+            
+            var fileUploaded = localStorage.getItem('fileUploaded');
+            if (fileUploaded === 'true') {
+                var fileName = localStorage.getItem('fileName');
+                document.getElementById('econsultData').disabled = false;
+                document.getElementById('econsultData').textContent = fileName;
+                document.getElementById('econsultData_view').disabled = false;
+            }else{
+                document.getElementById('econsultData').textContent = "None";
+            }
+        };
+
 
 
         
@@ -273,13 +278,79 @@
         }
 
         function viewFile() {
-            var uploadedFile = localStorage.getItem('uploadedFile');
-            if (uploadedFile) {
-                var blob = new Blob([uploadedFile], { type: 'text/plain' });
-                var url = URL.createObjectURL(blob);
-                window.open(url, '_blank');
-            }
+            fetch('/view_file_content')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch file content');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    var fileContent = data.fileContent;
+                    if (fileContent) {
+                        var blob = new Blob([fileContent], { type: 'text/plain' });
+                        var url = URL.createObjectURL(blob);
+                        window.open(url, '_blank');
+                    } else {
+                        alert('No file content available');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching file content:', error);
+                    alert('Failed to fetch file content');
+                });
         }
+
+
+
+        function viewBoneFracture() {
+            fetch('/view_bone_fracture')
+                .then(response => response.text())
+                .then(data => {
+                    // Create a Blob object from the text data
+                    const blob = new Blob([data], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    // Open the URL in a new tab
+                    window.open(url, '_blank');
+                    // Revoke the object URL to free up resources
+                    URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+
+        function viewOralSurgery() {
+            fetch('/view_oral_surgery')
+                .then(response => response.text())
+                .then(data => {
+                    // Create a Blob object from the text data
+                    const blob = new Blob([data], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    // Open the URL in a new tab
+                    window.open(url, '_blank');
+                    // Revoke the object URL to free up resources
+                    URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function logout() {
+            // Clear the localStorage flag
+            localStorage.removeItem('fileUploaded');
+            localStorage.removeItem('fileName');
+        }
+
+
+
+
+
+
+
 
     </script>
     <script src="{{ url_for('static', filename='js/click_data.js') }}"></script>
